@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA RÉSERVE — Un protocole ouvert (citoyen·ne·s & ASBL)</title>
+  <meta name="description" content="La Réserve : détourner une offre / un employeur, recruter (ou pas), demander une reconnaissance à une ASBL. Aucun formulaire. Le réel fait le reste." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Palette vert tendre + lilas */
+      --bg0:#070915;
+      --bg1:#0b1030;
+      --ink:#f3f6ff;
+      --muted:#c2c9e6;
+      --muted2:#9aa6d6;
+      --card:rgba(255,255,255,0.06);
+      --card2:rgba(255,255,255,0.035);
+      --border:rgba(255,255,255,0.12);
+      --glass: blur(12px);
+
+      --mint:#bfffe3;     /* vert tendre */
+      --mint2:#7ef8d2;
+      --lilac:#d7b9ff;    /* lilas */
+      --lilac2:#b88cff;
+
+      --shadow: 0 14px 50px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:"DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(126,248,210,.18), transparent 55%),
+        radial-gradient(1000px 700px at 80% 20%, rgba(184,140,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 60% 90%, rgba(191,255,227,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    /* Subtle grid */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity:.22;
+      pointer-events:none;
+      mask-image: radial-gradient(circle at 50% 35%, black 25%, transparent 75%);
+    }
+
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    .mono{font-family:"Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      backdrop-filter: var(--glass);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .dot{
+      width:9px;height:9px;border-radius:99px;
+      background:linear-gradient(180deg, var(--mint), var(--lilac));
+      box-shadow:0 0 0 6px rgba(191,255,227,.08), 0 0 24px rgba(184,140,255,.18);
+    }
+
+    /* NAV */
+    nav{
+      position:fixed;left:0;right:0;top:0;
+      z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(8,10,24,.35);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      text-decoration:none;
+      font-family:"Space Mono";
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+    .nav-links{
+      display:flex;gap:18px;align-items:center;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.92rem;
+      padding:10px 12px;
+      border-radius:12px;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+    .nav-cta{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:10px 14px;border-radius:14px;
+      border:1px solid rgba(184,140,255,.35);
+      background:linear-gradient(180deg, rgba(184,140,255,.18), rgba(126,248,210,.10));
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:700;
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    }
+
+    /* HERO */
+    header{
+      padding:120px 0 52px;
+      position:relative;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:28px;
+      align-items:start;
+    }
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+
+    h1{
+      font-family:"Syne";
+      font-weight:800;
+      letter-spacing:-.03em;
+      line-height:1.0;
+      font-size:clamp(2.6rem, 5vw, 4.8rem);
+      margin:16px 0 16px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:60ch;
+      margin:0 0 18px;
+    }
+    .hero-quick{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .tag strong{color:var(--ink)}
+    .hero-card{
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter: var(--glass);
+      box-shadow: var(--shadow);
+      padding:20px;
+      position:sticky;
+      top:88px;
+    }
+    .hero-card h3{
+      font-family:"Syne";
+      font-weight:800;
+      margin:0 0 10px;
+      letter-spacing:-.02em;
+    }
+    .hero-card p{margin:0 0 12px;color:var(--muted)}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+    .btn.primary{
+      border-color:rgba(126,248,210,.45);
+      background:linear-gradient(180deg, rgba(126,248,210,.22), rgba(184,140,255,.12));
+    }
+    .btn.ghost{color:var(--muted)}
+    .btn small{font-weight:600;color:var(--muted)}
+    .kbd{
+      font-family:"Space Mono";
+      font-weight:700;
+      padding:2px 8px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.15);
+      color:var(--ink);
+      font-size:.85rem;
+    }
+
+    /* SECTION */
+    section{padding:38px 0}
+    .section-head{
+      display:flex;justify-content:space-between;align-items:end;gap:18px;
+      margin: 10px 0 18px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-family:"Syne";
+      font-size:clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .section-head p{margin:0;color:var(--muted);max-width:70ch}
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    @media (max-width:980px){ .grid3{grid-template-columns:1fr} }
+
+    .step{
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow: 0 12px 35px rgba(0,0,0,.20);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .step::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 20% 20%, rgba(126,248,210,.18), transparent 45%),
+                  radial-gradient(circle at 70% 40%, rgba(184,140,255,.16), transparent 45%);
+      transform:rotate(8deg);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .step > *{position:relative}
+    .step .num{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:14px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.12);
+      font-family:"Syne";
+      font-weight:900;
+      letter-spacing:-.02em;
+      margin-bottom:10px;
+      color:var(--ink);
+    }
+    .step h3{
+      margin:0 0 6px;
+      font-family:"Syne";
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .step p{margin:0;color:var(--muted)}
+    .step ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .step li{margin:6px 0}
+
+    /* TOGGLE */
+    .toggle{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 10px 0 18px;
+    }
+    .tbtn{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      border-radius:999px;
+      padding:10px 14px;
+      cursor:pointer;
+      font-weight:800;
+      font-family:"Syne";
+      letter-spacing:-.01em;
+      transition:.2s ease;
+    }
+    .tbtn.active{
+      color:var(--ink);
+      border-color: rgba(126,248,210,.45);
+      background:linear-gradient(180deg, rgba(126,248,210,.20), rgba(184,140,255,.10));
+    }
+    .panel{
+      display:none;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      padding:18px;
+      box-shadow: 0 16px 45px rgba(0,0,0,.25);
+    }
+    .panel.active{display:block; animation:fadeIn .25s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .panel h3{
+      margin:0 0 10px;
+      font-family:"Syne";
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    .panel p{margin:0 0 12px;color:var(--muted);max-width:85ch}
+    .callouts{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;
+    }
+    @media (max-width:980px){.callouts{grid-template-columns:1fr}}
+    .callout{
+      border-radius:18px;
+      border:1px dashed rgba(255,255,255,.18);
+      background:rgba(0,0,0,.15);
+      padding:14px;
+    }
+    .callout strong{color:var(--ink)}
+    .callout .k{color:var(--muted2);font-weight:800}
+
+    /* LEGAL */
+    .legal{
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.18);
+      padding:18px;
+      color:var(--muted);
+    }
+    .legal h3{
+      font-family:"Syne";
+      font-weight:900;
+      margin:0 0 10px;
+      color:var(--ink);
+    }
+    .legal ul{margin:10px 0 0;padding-left:18px}
+    .legal li{margin:7px 0}
+    .legal .ok{color:var(--mint)}
+    .legal .no{color:var(--lilac)}
+
+    /* FAQ */
+    .faq{
+      display:grid;gap:10px;
+    }
+    details{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.035);
+      padding:14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-family:"Syne";
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{color:var(--muted);margin:10px 0 0}
+
+    /* Footer */
+    footer{
+      padding:36px 0 48px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+    }
+    .footgrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width:980px){.footgrid{grid-template-columns:1fr}}
+    .small{font-size:.92rem;color:var(--muted2)}
+    .mono-link{font-family:"Space Mono";text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.24)}
+    .mono-link:hover{color:var(--ink);border-bottom-color:rgba(126,248,210,.55)}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <span class="dot" aria-hidden="true"></span>
+        <span>LA RÉSERVE</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#cest-quoi">C’est quoi ?</a>
+        <a href="#comment">Comment ça marche</a>
+        <a href="#entrees">Citoyen·ne·s / ASBL</a>
+        <a href="#cadre">Cadre légal</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a class="nav-cta" href="#entrees" title="Choisir une entrée">
+        Entrer
+        <span class="kbd">↧</span>
+      </a>
+    </div>
+  </nav>
+
+  <header id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="pill mono"><span class="dot"></span> dispositif ouvert • pas d’inscription • pas de deadline</span>
+        <h1>Un protocole simple.<br>Le réel fait le reste.</h1>
+        <p class="lead">
+          <strong>La Réserve</strong> est un système ouvert de <strong>reconnaissance</strong> :
+          tu détournes une offre d’emploi (ou un employeur), tu produis une trace publique,
+          tu demandes une reconnaissance à une <strong>ASBL belge</strong>.
+          Si ça circule et que ça prend, <strong>ça peut devenir réel</strong>.
+        </p>
+
+        <div class="hero-quick">
+          <span class="tag"><strong>0</strong> formulaire</span>
+          <span class="tag"><strong>∞</strong> façons de participer</span>
+          <span class="tag"><strong>1</strong> limite : la loi</span>
+          <span class="tag"><strong>1</strong> arbitre : le réel</span>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Résumé en 15 secondes">
+        <h3>Résumé (15 s)</h3>
+        <p>
+          <strong>1) Détourner</strong> quelque chose qui existe.<br>
+          <strong>2) Recruter</strong> (ou pas) une équipe.<br>
+          <strong>3) Soumettre</strong> à une ASBL pour reconnaissance.<br>
+          <strong>4) Si ça diffuse</strong>, la réserve peut devenir réelle.
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="#comment">Voir les 4 étapes</a>
+          <a class="btn ghost" href="#entrees">Choisir Citoyen·ne·s / ASBL</a>
+        </div>
+        <p class="small mono" style="margin-top:12px">
+          Astuce : commence petit. Une page, un PDF, un repo — et c’est déjà une trace.
+        </p>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="cest-quoi">
+      <div class="section-head">
+        <h2>C’est quoi, exactement ?</h2>
+        <p>
+          Pas un concours. Pas un appel à projets. Pas une promesse d’emploi.
+          <strong>Un cadre permissif</strong> qui transforme des actions légales et publiques en <strong>preuves</strong> et en <strong>signal</strong>.
+        </p>
+      </div>
+
+      <div class="grid3">
+        <div class="step">
+          <div class="num">A</div>
+          <h3>Un jeu… si tu veux</h3>
+          <p>Tu peux le vivre comme une expérience créative, satirique, poétique, sérieuse, politique. Le système accepte tout ça.</p>
+        </div>
+        <div class="step">
+          <div class="num">B</div>
+          <h3>…et un dispositif réel</h3>
+          <p>Quand une ASBL reconnaît un travail et que ça circule, ça peut déclencher une <strong>réserve de recrutement</strong> réelle.</p>
+        </div>
+        <div class="step">
+          <div class="num">C</div>
+          <h3>Sans “gatekeeping”</h3>
+          <p>Pas d’inscription, pas de jury central. Tu entres, tu sors, tu recommences. Le seul filtre : la légalité.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="comment">
+      <div class="section-head">
+        <h2>Comment ça marche</h2>
+        <p>
+          Voici la version la plus claire possible. Une étape = une phrase. Le reste est optionnel.
+        </p>
+      </div>
+
+      <div class="grid3">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Détourner</h3>
+          <p>Tu prends un objet du monde du travail… et tu le retournes.</p>
+          <ul>
+            <li>offre d’emploi, site d’employeur, procédure</li>
+            <li>mail automatique, refus, silence</li>
+            <li>format libre : page, PDF, repo, vidéo, collage…</li>
+          </ul>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Recruter (optionnel)</h3>
+          <p>Tu proposes une “équipe” — réelle, fictive, symbolique.</p>
+          <ul>
+            <li>9 personnes, ou 3, ou 1, ou zéro</li>
+            <li>des rôles plutôt que des gens, si tu veux</li>
+            <li>important : une trace lisible de ta logique</li>
+          </ul>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Soumettre à une ASBL</h3>
+          <p>Tu demandes une reconnaissance : lecture, commentaire, refus motivé, relay…</p>
+          <ul>
+            <li>l’ASBL peut valider, refuser, ignorer</li>
+            <li>toute réaction est une donnée</li>
+            <li>le silence aussi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:16px" class="step">
+        <div class="num">4</div>
+        <h3>Basculer (si ça prend)</h3>
+        <p>
+          Si une ASBL relaie et que le travail rencontre un écho, la réserve peut devenir réelle :
+          des postes peuvent apparaître, des personnes peuvent être recontactées. Sans promesse, sans automatisme.
+        </p>
+      </div>
+    </section>
+
+    <section id="entrees">
+      <div class="section-head">
+        <h2>Choisis ton entrée</h2>
+        <p>
+          Deux publics, deux façons de lire la même chose. Clique : tu verras une version “toi-friendly”.
+        </p>
+      </div>
+
+      <div class="toggle" role="tablist" aria-label="Entrées">
+        <button class="tbtn active" data-panel="p-citoyens" role="tab" aria-selected="true">Citoyen·ne·s</button>
+        <button class="tbtn" data-panel="p-asbl" role="tab" aria-selected="false">ASBL</button>
+      </div>
+
+      <div class="panel active" id="p-citoyens" role="tabpanel">
+        <h3>Citoyen·ne·s — Tu peux commencer aujourd’hui</h3>
+        <p>
+          Tu n’as besoin ni de réseau, ni de diplôme, ni d’autorisation. Tu as besoin d’un truc réel à retourner et d’une trace.
+          La Réserve accepte aussi le doute, les interruptions, la fatigue : tu as le droit de faire petit.
+        </p>
+
+        <div class="callouts">
+          <div class="callout">
+            <div class="k mono">Checklist ultra simple</div>
+            <p style="margin:8px 0 0;color:var(--muted)">
+              <strong>1.</strong> choisis une offre / un employeur<br>
+              <strong>2.</strong> fais une version “révélatrice”<br>
+              <strong>3.</strong> publie quelque part (lien)<br>
+              <strong>4.</strong> contacte une ASBL (mail)
+            </p>
+          </div>
+          <div class="callout">
+            <div class="k mono">Exemples de détournement (safe)</div>
+            <p style="margin:8px 0 0;color:var(--muted)">
+              Réécriture “utopie”, analyse critique, parodie assumée, miroir de valeurs, version inclusive,
+              simulation d’équipe (rôles), dossier PDF “audit”.
+            </p>
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:14px">
+          <a class="btn primary" href="#cadre">Voir les limites légales</a>
+          <a class="btn ghost" href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div class="panel" id="p-asbl" role="tabpanel">
+        <h3>ASBL — Vous ne “recrutez” rien. Vous reconnaissez (ou pas).</h3>
+        <p>
+          La Réserve n’est pas une charge supplémentaire imposée aux associations.
+          Vous êtes libres : lire, commenter, ignorer, refuser, relayer. Dans tous les cas, vous n’endossez aucune obligation d’engagement.
+        </p>
+
+        <div class="callouts">
+          <div class="callout">
+            <div class="k mono">Ce que vous pouvez faire</div>
+            <p style="margin:8px 0 0;color:var(--muted)">
+              Lecture rapide, retour critique, “label” informel, refus motivé, publication,
+              invitation à une rencontre, ou… rien.
+            </p>
+          </div>
+          <div class="callout">
+            <div class="k mono">Pourquoi participer</div>
+            <p style="margin:8px 0 0;color:var(--muted)">
+              Parce que c’est une manière légère de soutenir la créativité civique,
+              d’observer le monde du travail autrement, et de repérer des initiatives déjà actives.
+            </p>
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:14px">
+          <a class="btn primary" href="#cadre">Cadre & précautions</a>
+          <a class="btn ghost" href="#faq">FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cadre">
+      <div class="section-head">
+        <h2>Les seules limites</h2>
+        <p>
+          Le système est permissif, mais pas naïf : il se cale sur le droit et sur le réel.
+        </p>
+      </div>
+
+      <div class="legal">
+        <h3>✅ Autorisé (en gros)</h3>
+        <ul>
+          <li class="ok"><strong>Pastiche / parodie / satire</strong>, si ce n’est pas trompeur et si vous évitez la diffamation.</li>
+          <li class="ok">Réécrire, analyser, critiquer, imaginer une version alternative.</li>
+          <li class="ok">Publier vos propres contenus, captures, commentaires, et indiquer vos sources.</li>
+        </ul>
+
+        <h3 style="margin-top:18px">⛔ À éviter (très clairement)</h3>
+        <ul>
+          <li class="no">Diffamation, harcèlement, doxxing, appels à la haine.</li>
+          <li class="no">Usurpation d’identité (faire croire que vous êtes l’employeur / l’ASBL).</li>
+          <li class="no">Faux documents “trompeurs” (qui induisent le public en erreur sur une réalité factuelle).</li>
+          <li class="no">Mise en danger de personnes.</li>
+        </ul>
+
+        <p class="small" style="margin-top:14px">
+          Astuce simple : indiquez clairement “détournement / pastiche / version alternative” sur votre publication.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>Les questions qui reviennent tout de suite — réponses courtes.</p>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Je dois “m’inscrire” ?</summary>
+          <p>Non. La Réserve n’a pas d’inscription. Tu entres quand tu produis une trace légale et publiable.</p>
+        </details>
+        <details>
+          <summary>C’est un jeu ou c’est sérieux ?</summary>
+          <p>Les deux. C’est une forme de jeu social qui peut rester symbolique… ou basculer dans le réel si ça diffuse et que des acteurs s’en saisissent.</p>
+        </details>
+        <details>
+          <summary>Pourquoi “9 personnes” ?</summary>
+          <p>Ce n’est pas une règle. C’est un repère. Tu peux recruter 9, 3, 1, ou personne — y compris des rôles fictifs.</p>
+        </details>
+        <details>
+          <summary>Une ASBL prend un risque en répondant ?</summary>
+          <p>Non, si elle reste dans son rôle : lecture / avis / relai / refus. Elle n’engage aucune obligation d’embauche.</p>
+        </details>
+        <details>
+          <summary>Comment “ça devient réel” ?</summary>
+          <p>Quand un travail est reconnu (ou relayé) et rencontre un écho, des postes peuvent émerger. Rien n’est automatique, rien n’est promis.</p>
+        </details>
+      </div>
+    </section>
+
+    <section style="padding-bottom:10px">
+      <div class="section-head">
+        <h2>Prêt·e ?</h2>
+        <p>
+          Si tu veux, remplace juste les liens ci-dessous par les tiens (mail, repo, page).
+          Ça reste minimal et propre.
+        </p>
+      </div>
+
+      <div class="grid3">
+        <div class="step">
+          <div class="num">↗</div>
+          <h3>Publier une trace</h3>
+          <p class="small">Une page, un PDF, un repo, un article. C’est déjà une entrée dans le système.</p>
+          <p class="mono small" style="margin-top:10px">Ex : <a class="mono-link" href="#">https://votre-lien…</a></p>
+        </div>
+        <div class="step">
+          <div class="num">✉</div>
+          <h3>Contacter une ASBL</h3>
+          <p class="small">Demande une lecture / un avis / un relai. Même un refus est une donnée.</p>
+          <p class="mono small" style="margin-top:10px"><a class="mono-link" href="mailto:contact@exemple.be">contact@exemple.be</a></p>
+        </div>
+        <div class="step">
+          <div class="num">⌁</div>
+          <h3>Documenter</h3>
+          <p class="small">Screens, liens, dates. Ce qui circule / ne circule pas. Le réel comme preuve.</p>
+          <p class="mono small" style="margin-top:10px">Dossier : /preuves/</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footgrid">
+      <div>
+        <div class="pill mono"><span class="dot"></span> LA RÉSERVE • Belgique</div>
+        <p style="margin:12px 0 0" class="small">
+          La Réserve n’est pas une agence de recrutement. Ce n’est pas une promesse d’emploi.
+          C’est un dispositif ouvert de reconnaissance basé sur des traces publiques et des réponses réelles.
+        </p>
+      </div>
+      <div class="small">
+        <p class="mono" style="margin:0 0 8px;color:var(--muted)">Navigation</p>
+        <p style="margin:0">
+          <a class="mono-link" href="#comment">Étapes</a> ·
+          <a class="mono-link" href="#entrees">Entrées</a> ·
+          <a class="mono-link" href="#cadre">Cadre</a> ·
+          <a class="mono-link" href="#faq">FAQ</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tabs/panels
+    const buttons = document.querySelectorAll(".tbtn");
+    const panels = document.querySelectorAll(".panel");
+
+    function activate(id){
+      buttons.forEach(b=>{
+        const on = b.dataset.panel === id;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      panels.forEach(p=>p.classList.toggle("active", p.id === id));
+    }
+
+    buttons.forEach(b=>{
+      b.addEventListener("click", ()=>activate(b.dataset.panel));
+    });
+
+    // Deep-link support: #citoyens or #asbl
+    const hash = (location.hash || "").toLowerCase();
+    if (hash.includes("asbl")) activate("p-asbl");
+    if (hash.includes("citoyen")) activate("p-citoyens");
+  </script>
+</body>
+</html>

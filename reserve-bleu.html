@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>La Réserve — reconnaissance citoyenne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Réserve est un dispositif ouvert de reconnaissance citoyenne. Aucun formulaire. Aucun concours. Seulement le réel.">
+
+  <style>
+    :root {
+      --bg: #0f1220;
+      --fg: #f5f7fa;
+      --muted: #aab0c6;
+      --accent: #7cf2c2;
+      --accent2: #c7a6ff;
+      --card: #1a1f3a;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(circle at top, #1b2045, var(--bg));
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .split {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(124,242,194,0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card.asbl h2 {
+      color: var(--accent2);
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .asbl .note {
+      border-left-color: var(--accent2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .glitch {
+      display: inline-block;
+      animation: glitch 6s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { opacity: 1; }
+      48% { opacity: 1; }
+      49% { opacity: 0.3; }
+      50% { opacity: 1; }
+      51% { opacity: 0.6; }
+      52% { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>La Réserve</h1>
+  <p>
+    <span class="glitch">Ce qui existe déjà</span>,  
+    mais n’a jamais été reconnu.
+  </p>
+  <p>
+    Aucun concours. Aucun formulaire.  
+    Juste des actes réels, documentés, observables.
+  </p>
+</header>
+
+<main>
+
+  <section class="split">
+
+    <!-- CITOYENS -->
+    <div class="card citoyen">
+      <h2>Citoyen·ne·s</h2>
+
+      <p>
+        Tu peux entrer dans <strong>La Réserve</strong> à n’importe quel moment.
+        Il n’y a pas de bonne manière de faire.
+      </p>
+
+      <p><strong>Tu peux :</strong></p>
+      <ul>
+        <li>détourner une offre d’emploi</li>
+        <li>détourner un site d’employeur</li>
+        <li>détourner une procédure</li>
+        <li>détourner un refus ou un silence</li>
+        <li>documenter un échec</li>
+        <li>ne rien produire, et l’assumer</li>
+      </ul>
+
+      <p>
+        Tu peux recruter 9 personnes.  
+        Ou 3. Ou 1. Ou zéro.  
+        Réelles, fictives, symboliques.
+      </p>
+
+      <div class="note">
+        Tout ce qui est légal est autorisé.  
+        Le réel répondra comme il peut.
+      </div>
+    </div>
+
+    <!-- ASBL -->
+    <div class="card asbl">
+      <h2>ASBL</h2>
+
+      <p>
+        La Réserve n’est <strong>pas</strong> un concours,
+        <strong>pas</strong> un appel à projets,
+        <strong>pas</strong> une obligation de recruter.
+      </p>
+
+      <p>
+        Une ASBL peut :
+      </p>
+
+      <ul>
+        <li>lire un travail</li>
+        <li>le commenter</li>
+        <li>le critiquer</li>
+        <li>le refuser</li>
+        <li>l’ignorer</li>
+        <li>le relayer</li>
+      </ul>
+
+      <p>
+        Toute réaction est une donnée.  
+        Le silence aussi.
+      </p>
+
+      <div class="note">
+        Aucune responsabilité d’engagement.  
+        Aucune promesse.  
+        Juste une reconnaissance possible.
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    La Réserve fonctionne dans le respect du droit belge et européen.<br>
+    Elle n’évalue pas des personnes, mais des gestes documentés.
+  </p>
+  <p>
+    Si tu cherches des règles, ce n’est pas ici.<br>
+    Si tu cherches un cadre pour agir, tu y es déjà.
+  </p>
+</footer>
+
+</body>
+</html>

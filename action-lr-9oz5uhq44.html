@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test — La Réserve</title>
+    <meta name="description" content="ceci n'est pas un test">
+    <meta property="og:title" content="test — La Réserve">
+    <meta property="og:description" content="ceci n'est pas un test">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fraunces:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=VT323&family=Press+Start+2P&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+                    --bg-primary: #0c0c0c;
+                    --bg-secondary: #1a1a1a;
+                    --bg-tertiary: #0f0f0f;
+                    --bg-card: #0c0c0c;
+                    --text-primary: #00ff00;
+                    --text-secondary: #00aa00;
+                    --text-inverse: #0c0c0c;
+                    --accent-1: #00ff00;
+                    --accent-1-light: #33ff33;
+                    --accent-1-pale: #0a1a0a;
+                    --accent-1-deep: #00cc00;
+                    --accent-2: #00ff00;
+                    --accent-2-light: #33ff33;
+                    --accent-2-pale: #0a1a0a;
+                    --accent-2-deep: #00cc00;
+                    --border-light: #00ff00;
+                    --gradient-primary: linear-gradient(135deg, #00ff00, #00aa00);
+                    --gradient-soft: linear-gradient(135deg, #0a1a0a, #0f1f0f);
+                 --font-display: 'Fira Code', monospace; --font-body: 'Fira Code', monospace; --font-mono: 'Fira Code', monospace; --title-weight: 400; --title-style: normal; --title-spacing: 0; }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 3rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-soft);
+            border-radius: 30px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge-status {
+            background: #f59e0b22;
+            color: #f59e0b;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: var(--title-weight);
+            font-style: var(--title-style);
+            letter-spacing: var(--title-spacing);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .meta {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .meta strong {
+            color: var(--text-primary);
+        }
+        
+        .id-badge {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .timer {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-1-deep);
+            margin-top: 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: var(--title-weight);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-1-light);
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .info-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card p {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .info-card a {
+            color: var(--accent-1-deep);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .recrues-list {
+            display: grid;
+            gap: 0.8rem;
+        }
+        
+        .recrue-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .recrue-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-inverse);
+            font-weight: 600;
+        }
+        
+        .recrue-info {
+            flex: 1;
+        }
+        
+        .recrue-info strong {
+            display: block;
+            color: var(--text-primary);
+        }
+        
+        .recrue-info span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .recrue-type {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            background: var(--accent-2-pale);
+            color: var(--accent-2-deep);
+            border-radius: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -1.75rem;
+            top: 0.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-content {
+            color: var(--text-primary);
+        }
+        
+        .share-section {
+            background: var(--gradient-soft);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .share-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+        
+        .qr-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-logo .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+        }
+        
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--accent-1-deep);
+        }
+        
+        @media print {
+            .share-section, .qr-section { display: none; }
+        }
+    </style>
+</head>
+<body data-theme="console" data-style="brut">
+    <div class="container">
+        <header>
+            <span class="badge badge-status">🟡 En cours</span>
+            <h1>test</h1>
+            <p class="meta">
+                par <strong>beo</strong>
+                 • bxl
+                 • Autre
+            </p>
+            <span class="id-badge">LR-9OZ5UHQ44</span>
+            <p class="timer" id="timer"></p>
+        </header>
+        
+        <section>
+            <h2>Description</h2>
+            <p class="description">ceci n'est pas un test</p>
+        </section>
+        
+        
+        <section>
+            <h2>Informations</h2>
+            <div class="info-grid">
+                
+                <div class="info-card">
+                    <h3>ASBL visée</h3>
+                    <p>lamienne.asbl</p>
+                </div>
+                
+                
+                <div class="info-card">
+                    <h3>Source détournée</h3>
+                    <p><a href="https://ouaisfieu.github.io/laGarde/dossier-blanc.html" target="_blank">https://ouaisfieu.github.io/laGarde/dossier-blanc.html</a></p>
+                </div>
+                
+                
+                <div class="info-card">
+                    <h3>Détournement</h3>
+                    <p><a href="https://dl.ouaisfi.eu/x/" target="_blank">https://dl.ouaisfi.eu/x/</a></p>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+        <section>
+            <h2>Recrues (9/9)</h2>
+            <div class="recrues-list">
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">P</div>
+                    <div class="recrue-info">
+                        <strong>P. Seudo</strong>
+                        <span>Big Boss en Chef</span>
+                    </div>
+                    <span class="recrue-type">Moi-même</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">F</div>
+                    <div class="recrue-info">
+                        <strong>Figuier</strong>
+                        <span>Big Bosse en Cheffe</span>
+                    </div>
+                    <span class="recrue-type">Réelle</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">L</div>
+                    <div class="recrue-info">
+                        <strong>La Loutre</strong>
+                        <span>Responsable Bien-Être</span>
+                    </div>
+                    <span class="recrue-type">Réelle</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">S</div>
+                    <div class="recrue-info">
+                        <strong>Snitcher</strong>
+                        <span>Fouine de Luxe</span>
+                    </div>
+                    <span class="recrue-type">Fictive</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">S</div>
+                    <div class="recrue-info">
+                        <strong>Snootch</strong>
+                        <span>Blaireau de Merde</span>
+                    </div>
+                    <span class="recrue-type">Réelle</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">L</div>
+                    <div class="recrue-info">
+                        <strong>Le Poulpe</strong>
+                        <span>Agent Dormant</span>
+                    </div>
+                    <span class="recrue-type">Réelle</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">P</div>
+                    <div class="recrue-info">
+                        <strong>Pr. du Lac</strong>
+                        <span>Recrue Niveau -1</span>
+                    </div>
+                    <span class="recrue-type">Réelle</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">M</div>
+                    <div class="recrue-info">
+                        <strong>Mr. Big</strong>
+                        <span>Cible Niveau Alpha</span>
+                    </div>
+                    <span class="recrue-type">Fictive</span>
+                </div>
+                
+                <div class="recrue-card">
+                    <div class="recrue-avatar">M</div>
+                    <div class="recrue-info">
+                        <strong>Mrs. Big</strong>
+                        <span>Cible Niveau Alpha</span>
+                    </div>
+                    <span class="recrue-type">Fictive</span>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+        <section>
+            <h2>Journal de bord</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <span class="timeline-dot">🚀</span>
+                    <p class="timeline-date">1 mars 1980</p>
+                    <p class="timeline-content">Démarrage du Système</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-dot">🚀</span>
+                    <p class="timeline-date">1 janvier 2026</p>
+                    <p class="timeline-content">Création de l'Action</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-dot">🚀</span>
+                    <p class="timeline-date">31 octobre 2026</p>
+                    <p class="timeline-content">WOKE THE FUCK UP FESTIVAL</p>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        <section class="share-section">
+            <h3>Partager cette action</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=%F0%9F%8E%AD%20%22test%22%20%E2%80%94%20une%20action%20dans%20La%20R%C3%A9serve%20%23LaReserve%20%23ARG" target="_blank" class="share-btn">
+                    🐦 Twitter
+                </a>
+                <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Lien copié !');">
+                    📋 Copier le lien
+                </button>
+                <button class="share-btn" onclick="window.print();">
+                    🖨️ Imprimer
+                </button>
+            </div>
+        </section>
+        
+        <footer>
+            <a href="https://lareserve.be" class="footer-logo" target="_blank">
+                <span class="dot"></span>
+                LA RÉSERVE
+            </a>
+            <p>Ce qui existe déjà mais n'a jamais été reconnu.</p>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">
+                Action créée le 02/01/2026 •
+                <a href="https://lareserve.be" target="_blank">Créer votre propre action</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Timer since creation
+        const createdAt = new Date('2026-01-02T01:27:30.273Z');
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - createdAt;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            let text = 'Cette action existe depuis ';
+            if (days > 0) text += days + ' jour' + (days > 1 ? 's' : '') + ', ';
+            if (hours > 0 || days > 0) text += hours + 'h ';
+            text += minutes + 'min';
+            
+            document.getElementById('timer').textContent = text;
+        }
+        updateTimer();
+        setInterval(updateTimer, 60000);
+    </script>
+</body>
+</html>
