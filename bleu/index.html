@@ -1,0 +1,1340 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA RÉSERVE — Ce qui existe déjà mais n'a jamais été reconnu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir: #0a0a0a;
+            --blanc: #f8f7f4;
+            --jaune: #e8ff00;
+            --bleu: #0066ff;
+            --gris: #6b6b6b;
+            --gris-clair: #e5e5e5;
+            --rouge: #ff3333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--blanc);
+            color: var(--noir);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--blanc);
+            border-bottom: 1px solid var(--gris-clair);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 3rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--jaune);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--noir);
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--jaune);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, transparent 40%, rgba(232, 255, 0, 0.1) 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(0,0,0,0.02) 50px,
+                    rgba(0,0,0,0.02) 51px
+                );
+            z-index: -1;
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gris);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--gris);
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: -0.05em;
+            right: -0.05em;
+            height: 0.35em;
+            background: var(--jaune);
+            z-index: -1;
+            transform: skewX(-3deg);
+        }
+
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gris);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--noir);
+            background: transparent;
+            color: var(--noir);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--jaune);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        .btn-primary::before {
+            background: var(--jaune);
+        }
+
+        .btn-primary:hover {
+            color: var(--noir);
+        }
+
+        /* MARQUEE */
+        .marquee-container {
+            background: var(--noir);
+            padding: 1rem 0;
+            overflow: hidden;
+        }
+
+        .marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 0 1.5rem;
+            white-space: nowrap;
+        }
+
+        .marquee-content span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--blanc);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .marquee-content .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--jaune);
+            border-radius: 50%;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 6rem 3rem;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gris);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--gris);
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        /* AXIOME */
+        .axiome {
+            background: var(--noir);
+            color: var(--blanc);
+            text-align: center;
+            padding: 8rem 3rem;
+        }
+
+        .axiome-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .axiome blockquote {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        .axiome blockquote em {
+            color: var(--jaune);
+            font-style: normal;
+        }
+
+        .axiome p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--gris);
+        }
+
+        /* COMMENT ÇA MARCHE */
+        .process {
+            background: var(--blanc);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-card {
+            background: var(--blanc);
+            border: 1px solid var(--gris-clair);
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            border-color: var(--noir);
+            transform: translateY(-4px);
+        }
+
+        .process-card::before {
+            content: attr(data-step);
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--jaune);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        .process-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .process-card p {
+            color: var(--gris);
+            font-size: 0.95rem;
+        }
+
+        .process-card ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+
+        .process-card li {
+            color: var(--gris);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* TABS CITOYENS / ASBL */
+        .tabs-section {
+            background: linear-gradient(180deg, var(--blanc) 0%, #f0f0ed 100%);
+        }
+
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 0;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--gris-clair);
+        }
+
+        .tab-btn {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.5rem 3rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            color: var(--gris);
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--jaune);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--noir);
+        }
+
+        .tab-btn.active::after {
+            transform: scaleX(1);
+        }
+
+        .tab-btn:hover {
+            color: var(--noir);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .tab-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .tab-intro h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .tab-intro p {
+            color: var(--gris);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .tab-intro .highlight-box {
+            background: var(--jaune);
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tab-intro .highlight-box p {
+            color: var(--noir);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .tab-steps {
+            background: var(--blanc);
+            border: 1px solid var(--gris-clair);
+        }
+
+        .tab-step {
+            padding: 2rem;
+            border-bottom: 1px solid var(--gris-clair);
+            display: flex;
+            gap: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .tab-step:last-child {
+            border-bottom: none;
+        }
+
+        .tab-step:hover {
+            background: rgba(232, 255, 0, 0.1);
+        }
+
+        .step-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--jaune);
+            background: var(--noir);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+
+        /* ACCEPTE */
+        .accepte {
+            background: var(--blanc);
+        }
+
+        .accepte-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .accepte-item {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--gris-clair);
+            background: var(--blanc);
+            transition: all 0.3s ease;
+        }
+
+        .accepte-item:hover {
+            background: var(--jaune);
+            border-color: var(--jaune);
+            transform: scale(1.05);
+        }
+
+        /* LIMITES */
+        .limites {
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        .limites .section-label {
+            color: var(--gris);
+        }
+
+        .limites .section-title {
+            color: var(--blanc);
+        }
+
+        .limites-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .limites-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .limite-card {
+            border-left: 3px solid var(--jaune);
+            padding-left: 2rem;
+        }
+
+        .limite-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--jaune);
+        }
+
+        .limite-card p {
+            color: var(--gris);
+            font-size: 0.95rem;
+        }
+
+        .limite-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .limite-card li {
+            color: var(--gris);
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .limite-card li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--jaune);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--blanc);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gris-clair);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding-right: 2rem;
+        }
+
+        .faq-icon {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--jaune);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--gris);
+            font-size: 0.95rem;
+        }
+
+        /* CTA FINAL */
+        .cta-final {
+            background: var(--jaune);
+            text-align: center;
+            padding: 6rem 3rem;
+        }
+
+        .cta-final h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-final p {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--gris);
+        }
+
+        .cta-final .btn {
+            border-color: var(--noir);
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        .cta-final .btn:hover {
+            background: var(--blanc);
+            color: var(--noir);
+        }
+
+        .cta-final .btn::before {
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--noir);
+            color: var(--blanc);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--blanc);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--gris);
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gris);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--blanc);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 0.3rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--jaune);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--gris);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .tabs-nav {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                padding: 1rem 1.5rem;
+                text-align: left;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <span class="logo-dot"></span>
+            LA RÉSERVE
+        </div>
+        <ul class="nav-links">
+            <li><a href="#comment">Comment ça marche</a></li>
+            <li><a href="#qui">Citoyen·ne·s / ASBL</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#participer" class="btn btn-primary">Participer</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <span class="hero-label">Système ouvert depuis 2025</span>
+        <h1>LA <span class="highlight">RÉSERVE</span></h1>
+        <p class="hero-subtitle">Ce qui existe déjà mais n'a jamais été reconnu.</p>
+        <div class="hero-cta">
+            <a href="#qui" class="btn btn-primary">Entrer dans le système</a>
+            <a href="#comment" class="btn">Comprendre</a>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>Pas de règles</span>
+                <span class="dot"></span>
+                <span>Pas de jury</span>
+                <span class="dot"></span>
+                <span>Pas de deadline</span>
+                <span class="dot"></span>
+                <span>Pas de bonne réponse</span>
+                <span class="dot"></span>
+                <span>Juste le réel</span>
+                <span class="dot"></span>
+                <span>Pas de règles</span>
+                <span class="dot"></span>
+                <span>Pas de jury</span>
+                <span class="dot"></span>
+                <span>Pas de deadline</span>
+                <span class="dot"></span>
+                <span>Pas de bonne réponse</span>
+                <span class="dot"></span>
+                <span>Juste le réel</span>
+                <span class="dot"></span>
+            </div>
+            <div class="marquee-content">
+                <span>Pas de règles</span>
+                <span class="dot"></span>
+                <span>Pas de jury</span>
+                <span class="dot"></span>
+                <span>Pas de deadline</span>
+                <span class="dot"></span>
+                <span>Pas de bonne réponse</span>
+                <span class="dot"></span>
+                <span>Juste le réel</span>
+                <span class="dot"></span>
+                <span>Pas de règles</span>
+                <span class="dot"></span>
+                <span>Pas de jury</span>
+                <span class="dot"></span>
+                <span>Pas de deadline</span>
+                <span class="dot"></span>
+                <span>Pas de bonne réponse</span>
+                <span class="dot"></span>
+                <span>Juste le réel</span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="axiome">
+        <div class="axiome-content reveal">
+            <blockquote>
+                Toute personne peut entrer dans le système <em>à n'importe quel moment</em>, par n'importe quelle action légale, et en sortir <em>sans justification</em>.
+            </blockquote>
+            <p>Il n'y a pas de début. Pas de fin. Pas de bonne manière. Pas de mauvaise candidature.</p>
+        </div>
+    </section>
+
+    <section class="process" id="comment">
+        <div class="section-header reveal">
+            <span class="section-label">Le principe</span>
+            <h2 class="section-title">Comment ça fonctionne</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-card reveal" data-step="01">
+                <h3>Détourner</h3>
+                <p>Vous détournez quelque chose qui existe dans le monde du travail.</p>
+                <ul>
+                    <li>Une offre d'emploi</li>
+                    <li>Un site d'employeur</li>
+                    <li>Une procédure</li>
+                    <li>Un mail automatique</li>
+                    <li>Un silence, un refus</li>
+                </ul>
+            </div>
+            <div class="process-card reveal" data-step="02">
+                <h3>Recruter</h3>
+                <p>Vous recrutez jusqu'à 9 personnes. Ou 3. Ou 1. Ou zéro.</p>
+                <ul>
+                    <li>Réelles ou fictives</li>
+                    <li>Vous-même sous plusieurs rôles</li>
+                    <li>Des fonctions plutôt que des individus</li>
+                </ul>
+            </div>
+            <div class="process-card reveal" data-step="03">
+                <h3>Soumettre</h3>
+                <p>Vous contactez une ASBL belge et lui soumettez le travail pour reconnaissance.</p>
+                <ul>
+                    <li>Elle peut valider</li>
+                    <li>Elle peut ignorer</li>
+                    <li>Elle peut détourner à son tour</li>
+                </ul>
+            </div>
+            <div class="process-card reveal" data-step="04">
+                <h3>Basculer</h3>
+                <p>Si l'ASBL promeut le travail et que ça rencontre un écho — la réserve devient réelle.</p>
+                <ul>
+                    <li>Les recrues peuvent être recontactées</li>
+                    <li>Le poste peut devenir vrai</li>
+                    <li>Le jeu ne se distingue plus du réel</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="tabs-section" id="qui">
+        <div class="tabs-container">
+            <div class="section-header reveal">
+                <span class="section-label">Pour qui ?</span>
+                <h2 class="section-title">Choisissez votre entrée</h2>
+            </div>
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="citoyens">Citoyen·ne·s</button>
+                <button class="tab-btn" data-tab="asbl">ASBL</button>
+            </div>
+            
+            <div class="tab-content active" id="citoyens">
+                <div class="tab-grid">
+                    <div class="tab-intro">
+                        <h3>Vous êtes un·e citoyen·ne, un·e artiste, un·e chômeur·se, un·e activiste, ou simplement curieux·se ?</h3>
+                        <p>Vous n'avez besoin d'aucune autorisation. D'aucune compétence particulière. D'aucun réseau.</p>
+                        <p>Vous avez juste besoin d'une envie : <strong>révéler les mécaniques cachées du monde du travail.</strong></p>
+                        <div class="highlight-box">
+                            <p>↳ Même ne rien produire est une production, si c'est documenté.</p>
+                        </div>
+                    </div>
+                    <div class="tab-steps">
+                        <div class="tab-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Trouvez votre cible</h4>
+                                <p>Une offre d'emploi absurde. Un site corporate creux. Une procédure kafkaïenne. Un silence assourdissant.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Détournez-la</h4>
+                                <p>Parodie, pastiche, réécriture poétique, version utopique — publiez-la quelque part.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Recrutez votre équipe</h4>
+                                <p>9 personnes max. Réelles, fictives, ou un mélange. Produisez quelque chose ensemble — ou pas.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Cherchez une reconnaissance</h4>
+                                <p>Contactez une ASBL. Demandez une validation, un label, une lettre, une publication. Toute réponse compte.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Documentez tout</h4>
+                                <p>Screenshots, liens, PDF, témoignages. Tout est signal. Ce qui circule. Ce qui ne circule pas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="asbl">
+                <div class="tab-grid">
+                    <div class="tab-intro">
+                        <h3>Vous êtes une ASBL belge ? Vous pouvez devenir un maillon du système.</h3>
+                        <p>Des citoyen·ne·s vont vous contacter avec des "travaux" inhabituels. Des détournements. Des expérimentations.</p>
+                        <p><strong>Vous n'avez aucune obligation.</strong> Mais votre réponse — quelle qu'elle soit — fait partie du jeu.</p>
+                        <div class="highlight-box">
+                            <p>↳ Vous pouvez valider, ignorer, refuser, ou détourner à votre tour.</p>
+                        </div>
+                    </div>
+                    <div class="tab-steps">
+                        <div class="tab-step">
+                            <div class="step-number">A</div>
+                            <div class="step-content">
+                                <h4>Recevoir une demande</h4>
+                                <p>Un·e participant·e vous soumet un travail pour reconnaissance. Ça peut être sérieux, absurde, politique, poétique.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">B</div>
+                            <div class="step-content">
+                                <h4>Évaluer librement</h4>
+                                <p>Vous décidez selon vos propres critères. Il n'y a pas de bonne réponse. Votre silence est aussi une donnée.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">C</div>
+                            <div class="step-content">
+                                <h4>Répondre (ou pas)</h4>
+                                <p>Lettre de soutien, publication, label, co-signature, partenariat, refus motivé — tout est valide.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">D</div>
+                            <div class="step-content">
+                                <h4>Faire basculer le réel</h4>
+                                <p>Si vous promouvez un travail et qu'il rencontre un écho, vous participez à créer une vraie réserve de recrutement.</p>
+                            </div>
+                        </div>
+                        <div class="tab-step">
+                            <div class="step-number">E</div>
+                            <div class="step-content">
+                                <h4>Jouer vous-même</h4>
+                                <p>Rien ne vous empêche de lancer votre propre détournement. L'ASBL peut être joueuse autant que validatrice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="accepte">
+        <div class="section-header reveal" style="text-align: center;">
+            <span class="section-label">Philosophie</span>
+            <h2 class="section-title">Ce que le système accepte</h2>
+        </div>
+        <div class="accepte-grid reveal">
+            <span class="accepte-item">le temps long</span>
+            <span class="accepte-item">les interruptions</span>
+            <span class="accepte-item">la maladie</span>
+            <span class="accepte-item">la précarité</span>
+            <span class="accepte-item">le doute</span>
+            <span class="accepte-item">le bricolage</span>
+            <span class="accepte-item">la colère</span>
+            <span class="accepte-item">l'ironie</span>
+            <span class="accepte-item">le sérieux</span>
+            <span class="accepte-item">le jeu</span>
+            <span class="accepte-item">le retrait</span>
+            <span class="accepte-item">l'échec</span>
+            <span class="accepte-item">l'ennui</span>
+            <span class="accepte-item">la fatigue</span>
+            <span class="accepte-item">l'abandon</span>
+        </div>
+        <p style="text-align: center; margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--gris);" class="reveal">
+            Il ne pénalise que l'illégalité. Jamais l'imperfection.
+        </p>
+    </section>
+
+    <section class="limites">
+        <div class="section-header reveal">
+            <span class="section-label">Cadre</span>
+            <h2 class="section-title">Les seules limites</h2>
+        </div>
+        <div class="limites-grid">
+            <div class="limite-card reveal">
+                <h3>Le droit belge et européen</h3>
+                <ul>
+                    <li>Pas de diffamation</li>
+                    <li>Pas d'usurpation d'identité légale</li>
+                    <li>Pas de faux documents trompeurs</li>
+                    <li>Pas de mise en danger</li>
+                </ul>
+                <p style="margin-top: 1rem;">Le pastiche et la satire sont autorisés.</p>
+            </div>
+            <div class="limite-card reveal">
+                <h3>Le réel</h3>
+                <ul>
+                    <li>Le silence est une réponse</li>
+                    <li>L'échec est une donnée</li>
+                    <li>L'ennui est légitime</li>
+                    <li>L'abandon est valide</li>
+                </ul>
+                <p style="margin-top: 1rem;">Tout le reste est autorisé.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="section-header reveal" style="text-align: center;">
+            <span class="section-label">Questions</span>
+            <h2 class="section-title">FAQ</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>C'est quoi exactement, La Réserve ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Un système ouvert où le jeu peut devenir réel. Pas une base de CV, pas une shortlist, pas une promesse — mais un ensemble de traces, de gestes documentés, de tentatives visibles, de ratés assumés.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>Je risque quelque chose légalement ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tant que vous respectez le droit belge (pas de diffamation, pas d'usurpation d'identité, pas de faux documents trompeurs), vous ne risquez rien. Le pastiche et la satire sont protégés par la liberté d'expression.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>C'est un jeu ou c'est sérieux ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Les deux. C'est un ARG (jeu en réalité alternée) dont la particularité est qu'il peut basculer dans le réel à tout moment. Si une ASBL valide un travail et qu'il rencontre un succès, la réserve de recrutement devient vraie.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>Je dois produire quelque chose ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Quelque chose doit exister : un document, une trace, un geste, un service, un objet, une archive. Mais ce peut être minimal. Même ne rien produire est une production, si c'est documenté.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>Pourquoi 9 personnes ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Le chiffre 9 n'est pas une règle, c'est un repère symbolique. Vous pouvez recruter 9, 3, 1, ou zéro personnes. Vous pouvez aussi être vous-même sous 9 identités différentes.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">
+                    <h3>Comment je sais si j'ai "gagné" ?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Vous ne pouvez pas gagner. Il n'y a pas de game master, pas de scénario, pas de gagnant. Le seul arbitre : le réel. Le système observe, il ne juge pas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final" id="participer">
+        <h2>Vous êtes déjà dedans.</h2>
+        <p>Si vous cherchez des règles, ce n'est pas ici.<br>Si vous cherchez un cadre pour agir, vous êtes déjà dedans.</p>
+        <a href="mailto:contact@lareserve.be" class="btn">Déclarer une action</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-dot"></span>
+                    LA RÉSERVE
+                </div>
+                <p>Ce qui existe déjà mais n'a jamais été reconnu.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#comment">Comment ça marche</a></li>
+                    <li><a href="#qui">Citoyen·ne·s</a></li>
+                    <li><a href="#qui">ASBL</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Vie privée</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 La Réserve — Système ouvert</p>
+            <p>Belgique</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                faqItems.forEach(i => i.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
