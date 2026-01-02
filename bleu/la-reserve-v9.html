@@ -1,0 +1,5384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA RÉSERVE — Ce qui existe déjà mais n'a jamais été reconnu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Archivo:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=VT323&family=Press+Start+2P&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #fafaf8;
+            --bg-secondary: #eef4ec;
+            --bg-tertiary: #f3f0f7;
+            --bg-card: #ffffff;
+            --bg-dark: #2d2d2d;
+            --text-primary: #2d2d2d;
+            --text-secondary: #6b6b6b;
+            --text-inverse: #fafaf8;
+            --accent-1: #a8c5a0;
+            --accent-1-light: #d4e5d0;
+            --accent-1-pale: #eef4ec;
+            --accent-1-deep: #5a7d54;
+            --accent-2: #b8a9c9;
+            --accent-2-light: #ddd5e8;
+            --accent-2-pale: #f3f0f7;
+            --accent-2-deep: #7d6a91;
+            --border-light: #e8e8e6;
+            --gradient-primary: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            --gradient-soft: linear-gradient(135deg, var(--accent-1-pale), var(--accent-2-pale));
+            --gradient-bg: radial-gradient(ellipse at 20% 20%, rgba(168, 197, 160, 0.3) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 80%, rgba(184, 169, 201, 0.3) 0%, transparent 50%);
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+            --shadow-medium: 0 10px 40px rgba(0,0,0,0.1);
+            --glow: none;
+            --text-glow: none;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 600;
+            --title-style: normal;
+            --title-spacing: -0.02em;
+        }
+
+        /* TYPOGRAPHY STYLES */
+        [data-style="elegant"] {
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 600;
+            --title-style: normal;
+            --title-spacing: -0.02em;
+        }
+
+        [data-style="organique"] {
+            --font-display: 'Fraunces', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 500;
+            --title-style: normal;
+            --title-spacing: -0.01em;
+        }
+
+        [data-style="editorial"] {
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 400;
+            --title-style: normal;
+            --title-spacing: 0;
+        }
+
+        [data-style="litteraire"] {
+            --font-display: 'Libre Baskerville', serif;
+            --font-body: 'Archivo', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 700;
+            --title-style: normal;
+            --title-spacing: -0.01em;
+        }
+
+        [data-style="poetique"] {
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 400;
+            --title-style: italic;
+            --title-spacing: 0.01em;
+        }
+
+        [data-style="brut"] {
+            --font-display: 'Bricolage Grotesque', sans-serif;
+            --font-body: 'Crimson Pro', serif;
+            --font-mono: 'Space Mono', monospace;
+            --title-weight: 700;
+            --title-style: normal;
+            --title-spacing: -0.03em;
+        }
+
+        /* THEME: CLAIR */
+        [data-theme="clair"] {
+            --bg-primary: #fafaf8;
+            --bg-secondary: #eef4ec;
+            --bg-tertiary: #f3f0f7;
+            --bg-card: #ffffff;
+            --bg-dark: #2d2d2d;
+            --text-primary: #2d2d2d;
+            --text-secondary: #6b6b6b;
+            --text-inverse: #fafaf8;
+            --accent-1: #a8c5a0;
+            --accent-1-light: #d4e5d0;
+            --accent-1-pale: #eef4ec;
+            --accent-1-deep: #5a7d54;
+            --accent-2: #b8a9c9;
+            --accent-2-light: #ddd5e8;
+            --accent-2-pale: #f3f0f7;
+            --accent-2-deep: #7d6a91;
+            --border-light: #e8e8e6;
+            --gradient-primary: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            --gradient-soft: linear-gradient(135deg, var(--accent-1-pale), var(--accent-2-pale));
+            --gradient-bg: radial-gradient(ellipse at 20% 20%, rgba(168, 197, 160, 0.3) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 80%, rgba(184, 169, 201, 0.3) 0%, transparent 50%);
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+            --shadow-medium: 0 10px 40px rgba(0,0,0,0.1);
+            --glow: none;
+            --text-glow: none;
+        }
+
+        /* THEME: SOMBRE */
+        [data-theme="sombre"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
+            --bg-tertiary: #2a2a2a;
+            --bg-card: #2d2d2d;
+            --bg-dark: #0f0f0f;
+            --text-primary: #e8e8e8;
+            --text-secondary: #999999;
+            --text-inverse: #1a1a1a;
+            --accent-1: #7fa878;
+            --accent-1-light: #5a7d54;
+            --accent-1-pale: #2d3d2a;
+            --accent-1-deep: #a8c5a0;
+            --accent-2: #9a8aab;
+            --accent-2-light: #7d6a91;
+            --accent-2-pale: #3d3545;
+            --accent-2-deep: #b8a9c9;
+            --border-light: #3d3d3d;
+            --gradient-primary: linear-gradient(135deg, #7fa878, #9a8aab);
+            --gradient-soft: linear-gradient(135deg, #2d3d2a, #3d3545);
+            --gradient-bg: radial-gradient(ellipse at 20% 20%, rgba(127, 168, 120, 0.15) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 80%, rgba(154, 138, 171, 0.15) 0%, transparent 50%);
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.3);
+            --shadow-medium: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        /* THEME: DISCO */
+        [data-theme="disco"] {
+            --bg-primary: #1a0a2e;
+            --bg-secondary: #2d1b4e;
+            --bg-tertiary: #3d2a5e;
+            --bg-card: #2d1b4e;
+            --bg-dark: #0f0520;
+            --text-primary: #ffffff;
+            --text-secondary: #d4a5ff;
+            --text-inverse: #1a0a2e;
+            --accent-1: #ff6ec7;
+            --accent-1-light: #ff9ed8;
+            --accent-1-pale: #4d1a3d;
+            --accent-1-deep: #ff3eaa;
+            --accent-2: #7b68ee;
+            --accent-2-light: #9d8fff;
+            --accent-2-pale: #2d1b5e;
+            --accent-2-deep: #5a4cd0;
+            --border-light: #5a3d7a;
+            --gradient-primary: linear-gradient(135deg, #ff6ec7, #7b68ee, #00d4ff);
+            --gradient-soft: linear-gradient(135deg, #4d1a3d, #2d1b5e);
+            --gradient-bg: radial-gradient(ellipse at 20% 20%, rgba(255, 110, 199, 0.3) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 80%, rgba(123, 104, 238, 0.3) 0%, transparent 50%);
+            --shadow-soft: 0 4px 20px rgba(255, 110, 199, 0.2);
+            --shadow-medium: 0 10px 40px rgba(123, 104, 238, 0.3);
+            --glow: 0 0 20px rgba(255, 110, 199, 0.5);
+        }
+
+        [data-theme="disco"] .hero-decoration {
+            animation: disco-spin 4s linear infinite;
+            border-color: var(--accent-1);
+            box-shadow: 0 0 30px rgba(255, 110, 199, 0.5);
+        }
+
+        @keyframes disco-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        [data-theme="disco"] .marquee-container {
+            background: linear-gradient(90deg, #ff6ec7, #7b68ee, #00d4ff, #ff6ec7);
+            background-size: 300% 100%;
+            animation: disco-gradient 3s ease infinite;
+        }
+
+        @keyframes disco-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        [data-theme="disco"] .btn-primary {
+            box-shadow: 0 0 20px rgba(255, 110, 199, 0.5);
+        }
+
+        [data-theme="disco"] .logo-dot {
+            box-shadow: 0 0 15px rgba(255, 110, 199, 0.8);
+        }
+
+        /* THEME: NEON */
+        [data-theme="neon"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #0f0f0f;
+            --bg-dark: #000000;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-inverse: #0a0a0a;
+            --accent-1: #00ff88;
+            --accent-1-light: #33ff9f;
+            --accent-1-pale: #0a2a1a;
+            --accent-1-deep: #00cc6a;
+            --accent-2: #ff0080;
+            --accent-2-light: #ff3399;
+            --accent-2-pale: #2a0a1a;
+            --accent-2-deep: #cc0066;
+            --border-light: #2a2a2a;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #ff0080);
+            --gradient-soft: linear-gradient(135deg, #0a2a1a, #2a0a1a);
+            --gradient-bg: radial-gradient(ellipse at 30% 20%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                           radial-gradient(ellipse at 70% 80%, rgba(255, 0, 128, 0.1) 0%, transparent 50%);
+            --shadow-soft: 0 4px 20px rgba(0, 255, 136, 0.1);
+            --shadow-medium: 0 10px 40px rgba(255, 0, 128, 0.2);
+            --glow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        [data-theme="neon"] .hero h1 {
+            text-shadow: 0 0 40px rgba(0, 255, 136, 0.5), 0 0 80px rgba(255, 0, 128, 0.3);
+        }
+
+        [data-theme="neon"] .hero h1 .highlight::after {
+            background: linear-gradient(90deg, rgba(0, 255, 136, 0.4), rgba(255, 0, 128, 0.4));
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        [data-theme="neon"] .btn-primary {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        [data-theme="neon"] .logo-dot {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+        }
+
+        [data-theme="neon"] .section-title {
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* THEME: RETROGEEK */
+        [data-theme="retrogeek"] {
+            --bg-primary: #2b1b3d;
+            --bg-secondary: #3d2a5a;
+            --bg-tertiary: #4a3468;
+            --bg-card: #352650;
+            --bg-dark: #1a0f28;
+            --text-primary: #ffd700;
+            --text-secondary: #ff9500;
+            --text-inverse: #2b1b3d;
+            --accent-1: #00ff00;
+            --accent-1-light: #66ff66;
+            --accent-1-pale: #1a3d1a;
+            --accent-1-deep: #00cc00;
+            --accent-2: #ff6600;
+            --accent-2-light: #ff8533;
+            --accent-2-pale: #3d2a1a;
+            --accent-2-deep: #cc5200;
+            --border-light: #5a4a6d;
+            --gradient-primary: linear-gradient(135deg, #00ff00, #ff6600);
+            --gradient-soft: linear-gradient(135deg, #1a3d1a, #3d2a1a);
+            --gradient-bg: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px);
+            --shadow-soft: 0 4px 0 #1a0f28;
+            --shadow-medium: 0 8px 0 #1a0f28;
+            /* Keep display font as pixel, but allow body font to be changed */
+            --font-display: 'Press Start 2P', cursive;
+            --font-mono: 'VT323', monospace;
+            --title-weight: 400;
+            --title-style: normal;
+            --title-spacing: 0;
+        }
+
+        [data-theme="retrogeek"] .hero h1,
+        [data-theme="retrogeek"] .section-title,
+        [data-theme="retrogeek"] .logo {
+            font-family: 'Press Start 2P', cursive !important;
+        }
+
+        [data-theme="retrogeek"] .hero h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem) !important;
+            text-shadow: 4px 4px 0 #ff6600, -2px -2px 0 #00ff00;
+            line-height: 1.5 !important;
+        }
+
+        [data-theme="retrogeek"] .section-title {
+            font-size: clamp(1rem, 3vw, 1.5rem) !important;
+            text-shadow: 3px 3px 0 #ff6600;
+        }
+
+        [data-theme="retrogeek"] .btn {
+            border-radius: 0;
+            border: 4px solid var(--accent-1);
+            box-shadow: 4px 4px 0 var(--accent-2);
+            text-transform: uppercase;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+        }
+
+        [data-theme="retrogeek"] .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--accent-2);
+        }
+
+        [data-theme="retrogeek"] .process-card,
+        [data-theme="retrogeek"] .archive-card,
+        [data-theme="retrogeek"] .form-container {
+            border-radius: 0;
+            border: 4px solid var(--accent-1);
+            box-shadow: 6px 6px 0 var(--accent-2);
+        }
+
+        [data-theme="retrogeek"] .tabs-nav { border-radius: 0; }
+        [data-theme="retrogeek"] .tab-btn {
+            border-radius: 0;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+        }
+
+        [data-theme="retrogeek"] .logo-dot {
+            border-radius: 0;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        [data-theme="retrogeek"] .hero-decoration { display: none; }
+
+        [data-theme="retrogeek"] .marquee-content span {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+        }
+
+        /* THEME: CONSOLE */
+        [data-theme="console"] {
+            --bg-primary: #0c0c0c;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #0f0f0f;
+            --bg-card: #0c0c0c;
+            --bg-dark: #000000;
+            --text-primary: #00ff00;
+            --text-secondary: #00aa00;
+            --text-inverse: #0c0c0c;
+            --accent-1: #00ff00;
+            --accent-1-light: #33ff33;
+            --accent-1-pale: #0a1a0a;
+            --accent-1-deep: #00cc00;
+            --accent-2: #00ff00;
+            --accent-2-light: #33ff33;
+            --accent-2-pale: #0a1a0a;
+            --accent-2-deep: #00cc00;
+            --border-light: #00ff00;
+            --gradient-primary: linear-gradient(135deg, #00ff00, #00aa00);
+            --gradient-soft: linear-gradient(135deg, #0a1a0a, #0f1f0f);
+            --gradient-bg: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 255, 0, 0.03) 1px, rgba(0, 255, 0, 0.03) 2px);
+            --shadow-soft: 0 0 10px rgba(0, 255, 0, 0.2);
+            --shadow-medium: 0 0 20px rgba(0, 255, 0, 0.3);
+            --glow: 0 0 10px rgba(0, 255, 0, 0.5);
+            /* Keep mono font for titles */
+            --font-display: 'Fira Code', monospace;
+            --font-mono: 'Fira Code', monospace;
+            --title-weight: 400;
+            --title-style: normal;
+            --title-spacing: 0;
+        }
+
+        [data-theme="console"] .hero h1,
+        [data-theme="console"] .section-title,
+        [data-theme="console"] .logo {
+            font-family: 'Fira Code', monospace !important;
+        }
+
+        [data-theme="console"] body { background-image: var(--gradient-bg); }
+        [data-theme="console"] .hero h1 { text-shadow: 0 0 20px rgba(0, 255, 0, 0.8); }
+        [data-theme="console"] .hero h1::before { content: '> '; opacity: 0.7; }
+        [data-theme="console"] .hero h1 .highlight::after {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        [data-theme="console"] .hero-subtitle::before { content: '// '; opacity: 0.5; }
+        [data-theme="console"] .section-title::before { content: '$ '; opacity: 0.5; }
+
+        [data-theme="console"] .btn {
+            border-radius: 0;
+            border: 1px solid var(--accent-1);
+            font-family: 'Fira Code', monospace;
+            text-transform: lowercase;
+        }
+
+        [data-theme="console"] .process-card,
+        [data-theme="console"] .archive-card,
+        [data-theme="console"] .form-container,
+        [data-theme="console"] .tab-steps {
+            border-radius: 0;
+            border: 1px solid var(--accent-1);
+            box-shadow: var(--shadow-soft);
+        }
+
+        [data-theme="console"] .process-card h3::before,
+        [data-theme="console"] .archive-card h3::before { content: '> '; opacity: 0.5; }
+
+        [data-theme="console"] .tabs-nav {
+            border-radius: 0;
+            background: transparent;
+            border: 1px solid var(--accent-1);
+        }
+
+        [data-theme="console"] .tab-btn {
+            border-radius: 0;
+            font-family: 'Fira Code', monospace;
+        }
+
+        [data-theme="console"] .tab-btn.active {
+            background: var(--accent-1);
+            color: var(--bg-primary);
+        }
+
+        [data-theme="console"] .logo-dot {
+            border-radius: 0;
+            animation: cursor-blink 1s step-end infinite;
+        }
+
+        @keyframes cursor-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        [data-theme="console"] .hero-decoration { display: none; }
+
+        [data-theme="console"] .marquee-container {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--accent-1);
+            border-bottom: 1px solid var(--accent-1);
+        }
+
+        [data-theme="console"] .marquee-content span { font-family: 'Fira Code', monospace; }
+        [data-theme="console"] .accepte-item { border-radius: 0; }
+        [data-theme="console"] .faq-icon { border-radius: 0; font-family: 'Fira Code', monospace; }
+        [data-theme="console"] .step-number { border-radius: 0; font-family: 'Fira Code', monospace; }
+
+        [data-theme="console"] input,
+        [data-theme="console"] textarea,
+        [data-theme="console"] select {
+            border-radius: 0;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--accent-1);
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* ============================================
+           TYPOGRAPHY STYLES (high specificity override)
+           These come AFTER themes to ensure fonts are applied
+           ============================================ */
+        
+        body[data-style="elegant"] {
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        body[data-style="organique"] {
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        body[data-style="editorial"] {
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body[data-style="litteraire"] {
+            --font-body: 'Archivo', sans-serif;
+        }
+
+        body[data-style="poetique"] {
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body[data-style="brut"] {
+            --font-body: 'Crimson Pro', serif;
+        }
+
+        /* For retrogeek and console, only override body font if explicitly set
+           Display fonts stay as theme-specific (pixel/mono) */
+        body[data-theme="retrogeek"][data-style="elegant"],
+        body[data-theme="console"][data-style="elegant"] {
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        body[data-theme="retrogeek"][data-style="organique"],
+        body[data-theme="console"][data-style="organique"] {
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        body[data-theme="retrogeek"][data-style="editorial"],
+        body[data-theme="console"][data-style="editorial"] {
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body[data-theme="retrogeek"][data-style="litteraire"],
+        body[data-theme="console"][data-style="litteraire"] {
+            --font-body: 'Archivo', sans-serif;
+        }
+
+        body[data-theme="retrogeek"][data-style="poetique"],
+        body[data-theme="console"][data-style="poetique"] {
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body[data-theme="retrogeek"][data-style="brut"],
+        body[data-theme="console"][data-style="brut"] {
+            --font-body: 'Crimson Pro', serif;
+        }
+
+        /* BASE STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* MARKDOWN EDITOR */
+        .md-editor {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+
+        .md-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            padding: 0.6rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .md-toolbar button {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .md-toolbar button:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        .md-toolbar button.active {
+            background: var(--accent-1);
+            color: var(--text-inverse);
+            border-color: var(--accent-1);
+        }
+
+        .md-toolbar .separator {
+            width: 1px;
+            height: 24px;
+            background: var(--border-light);
+            margin: 0 0.3rem;
+            align-self: center;
+        }
+
+        .md-toolbar .spacer {
+            flex: 1;
+        }
+
+        .md-toolbar .md-help {
+            font-size: 0.7rem;
+            padding: 0 0.8rem;
+            width: auto;
+            color: var(--text-secondary);
+        }
+
+        .md-content {
+            display: flex;
+            min-height: 200px;
+        }
+
+        .md-content.preview-only .md-input-wrap {
+            display: none;
+        }
+
+        .md-content.preview-only .md-preview-wrap {
+            flex: 1;
+            border-left: none;
+        }
+
+        .md-content.edit-only .md-preview-wrap {
+            display: none;
+        }
+
+        .md-content.edit-only .md-input-wrap {
+            flex: 1;
+        }
+
+        .md-input-wrap,
+        .md-preview-wrap {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .md-preview-wrap {
+            border-left: 1px solid var(--border-light);
+            background: var(--bg-primary);
+        }
+
+        .md-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            padding: 0.5rem 0.8rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .md-input {
+            flex: 1;
+            border: none;
+            padding: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            resize: none;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            min-height: 150px;
+        }
+
+        .md-input:focus {
+            outline: none;
+        }
+
+        .md-preview {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .md-preview:empty::before {
+            content: 'Aperçu Markdown...';
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Markdown rendered styles */
+        .md-preview h1, .md-preview h2, .md-preview h3 {
+            font-family: var(--font-display);
+            margin: 1rem 0 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .md-preview h1 { font-size: 1.5rem; }
+        .md-preview h2 { font-size: 1.3rem; }
+        .md-preview h3 { font-size: 1.1rem; }
+
+        .md-preview p {
+            margin: 0.5rem 0;
+        }
+
+        .md-preview strong {
+            font-weight: 600;
+            color: var(--accent-1-deep);
+        }
+
+        .md-preview em {
+            font-style: italic;
+            color: var(--accent-2-deep);
+        }
+
+        .md-preview code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            background: var(--bg-secondary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            color: var(--accent-2-deep);
+        }
+
+        .md-preview pre {
+            background: var(--bg-dark);
+            color: var(--text-inverse);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+        }
+
+        .md-preview pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .md-preview blockquote {
+            border-left: 3px solid var(--accent-1);
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .md-preview ul, .md-preview ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .md-preview li {
+            margin: 0.3rem 0;
+        }
+
+        .md-preview a {
+            color: var(--accent-1-deep);
+            text-decoration: underline;
+        }
+
+        .md-preview hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 1rem 0;
+        }
+
+        .md-preview img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .md-preview table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+        }
+
+        .md-preview th, .md-preview td {
+            border: 1px solid var(--border-light);
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .md-preview th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+
+        .md-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.8rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .md-stats span {
+            margin-right: 1rem;
+        }
+
+        .md-autosave {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .md-autosave.saving {
+            color: var(--accent-2);
+        }
+
+        .md-autosave.saved {
+            color: var(--accent-1-deep);
+        }
+
+        /* Markdown Help Modal */
+        .md-help-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .md-help-modal.open {
+            display: flex;
+        }
+
+        .md-help-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .md-help-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .md-help-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .md-help-content th, .md-help-content td {
+            padding: 0.6rem;
+            border-bottom: 1px solid var(--border-light);
+            text-align: left;
+        }
+
+        .md-help-content th {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .md-help-content code {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .md-help-close {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 8px;
+            color: var(--text-inverse);
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        /* File attachments */
+        .attachments-section {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border: 2px dashed var(--border-light);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .attachments-section.dragover {
+            border-color: var(--accent-1);
+            background: var(--accent-1-pale);
+        }
+
+        .attachments-section h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .attachments-section p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .attachment-input {
+            display: none;
+        }
+
+        .attachment-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .attachment-btn:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        .attachments-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .attachment-item .remove {
+            width: 18px;
+            height: 18px;
+            border: none;
+            background: var(--accent-2-pale);
+            color: var(--accent-2-deep);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Progress indicator */
+        .form-progress {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .progress-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .progress-step .step-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.completed .step-dot {
+            background: var(--accent-1);
+            border-color: var(--accent-1);
+            color: var(--text-inverse);
+        }
+
+        .progress-step.active .step-dot {
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+        }
+
+        .progress-step .step-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .progress-step.completed .step-label,
+        .progress-step.active .step-label {
+            color: var(--accent-1-deep);
+        }
+
+        .progress-bar {
+            flex: 0.5;
+            height: 2px;
+            background: var(--border-light);
+            align-self: center;
+            margin-top: -15px;
+        }
+
+        .progress-bar.filled {
+            background: var(--accent-1);
+        }
+
+        /* Templates */
+        .templates-section {
+            margin-bottom: 2rem;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .template-card {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .template-card:hover {
+            border-color: var(--accent-1);
+            background: var(--accent-1-pale);
+            transform: translateY(-2px);
+        }
+
+        .template-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card .name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .template-card .desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        /* Keyboard shortcuts hint */
+        .shortcuts-hint {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.5rem 0.8rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            box-shadow: var(--shadow-soft);
+            z-index: 100;
+            display: none;
+        }
+
+        .shortcuts-hint.visible {
+            display: block;
+        }
+
+        .shortcuts-hint kbd {
+            background: var(--bg-secondary);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin: 0 0.2rem;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* SWITCHER PANEL */
+        .switcher-panel {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .switcher-options {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            min-width: 220px;
+            max-height: 70vh;
+            overflow-y: auto;
+            border: 1px solid var(--border-light);
+        }
+
+        .switcher-options.open {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .switcher-section h4 {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .switcher-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .theme-btn {
+            aspect-ratio: 1;
+            border: 2px solid var(--border-light);
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.5rem;
+        }
+
+        .theme-btn:hover {
+            border-color: var(--accent-1);
+            transform: scale(1.05);
+        }
+
+        .theme-btn.active {
+            border-color: var(--accent-1);
+            background: var(--gradient-soft);
+        }
+
+        .theme-btn .theme-icon { font-size: 1.2rem; }
+        .theme-btn .theme-name {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .style-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .style-btn {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .style-btn:hover {
+            border-color: var(--accent-1);
+            background: var(--bg-secondary);
+        }
+
+        .style-btn.active {
+            border-color: var(--accent-1);
+            background: var(--gradient-soft);
+        }
+
+        .style-btn .style-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .style-btn .style-preview {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .style-btn[data-style="elegant"] .style-name { font-family: 'Playfair Display', serif; }
+        .style-btn[data-style="organique"] .style-name { font-family: 'Fraunces', serif; }
+        .style-btn[data-style="editorial"] .style-name { font-family: 'DM Serif Display', serif; }
+        .style-btn[data-style="litteraire"] .style-name { font-family: 'Libre Baskerville', serif; }
+        .style-btn[data-style="poetique"] .style-name { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .style-btn[data-style="brut"] .style-name { font-family: 'Bricolage Grotesque', sans-serif; }
+
+        .switcher-toggle {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-medium), var(--glow);
+            transition: all 0.3s ease;
+            color: var(--text-inverse);
+        }
+
+        .switcher-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(from var(--bg-primary) r g b / 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav.scrolled {
+            padding: 1rem 3rem;
+            border-bottom-color: var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: var(--title-weight);
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .logo-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-1); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--gradient-bg);
+            z-index: -1;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            top: 15%;
+            right: 5%;
+            width: 300px;
+            height: 300px;
+            border: 1px solid var(--accent-1-light);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-decoration::after {
+            content: '';
+            position: absolute;
+            top: 50px; left: 50px; right: 50px; bottom: 50px;
+            border: 1px solid var(--accent-2-light);
+            border-radius: 50%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent-1-deep);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-1), transparent);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: var(--title-weight);
+            font-style: var(--title-style);
+            line-height: 1;
+            letter-spacing: var(--title-spacing);
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero h1 .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.15em;
+            left: -0.05em;
+            right: -0.05em;
+            height: 0.3em;
+            background: linear-gradient(90deg, var(--accent-1-light), var(--accent-2-light));
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border: 1.5px solid var(--text-primary);
+            background: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-1);
+            background: var(--accent-1-pale);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            color: var(--text-inverse);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* MARQUEE */
+        .marquee-container {
+            background: var(--gradient-soft);
+            padding: 1.2rem 0;
+            overflow: hidden;
+            border-top: 1px solid var(--accent-1-light);
+            border-bottom: 1px solid var(--accent-2-light);
+        }
+
+        .marquee {
+            display: flex;
+            animation: marquee 40s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 0 1.5rem;
+            white-space: nowrap;
+        }
+
+        .marquee-content span {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .marquee-content .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SECTIONS */
+        section { padding: 7rem 3rem; }
+
+        .section-header { margin-bottom: 4rem; }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent-2-deep);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 25px;
+            height: 1px;
+            background: var(--accent-2);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: var(--title-weight);
+            font-style: var(--title-style);
+            line-height: 1.15;
+            letter-spacing: var(--title-spacing);
+            color: var(--text-primary);
+        }
+
+        /* AXIOME */
+        .axiome {
+            background: var(--gradient-soft);
+            text-align: center;
+            padding: 8rem 3rem;
+            position: relative;
+        }
+
+        .axiome::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 15rem;
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-1-light);
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .axiome-content {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .axiome blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .axiome blockquote em {
+            color: var(--accent-1-deep);
+            font-style: italic;
+        }
+
+        .axiome p {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* PROCESS */
+        .process { background: var(--bg-primary); }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .process-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+            border-radius: 12px;
+        }
+
+        .process-card:nth-child(odd) { border-color: var(--accent-1-light); }
+        .process-card:nth-child(even) { border-color: var(--accent-2-light); }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .process-card::before {
+            content: attr(data-step);
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: var(--title-weight);
+            position: absolute;
+            top: 0.5rem;
+            right: 1.5rem;
+            line-height: 1;
+            opacity: 0.15;
+        }
+
+        .process-card:nth-child(odd)::before { color: var(--accent-1); }
+        .process-card:nth-child(even)::before { color: var(--accent-2); }
+
+        .process-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: var(--title-weight);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .process-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .process-card li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .process-card li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+            font-weight: bold;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            background: var(--gradient-soft);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-intro h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: var(--title-weight);
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-intro p {
+            color: var(--text-secondary);
+        }
+
+        .form-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            padding: 0.3rem;
+            border-radius: 10px;
+        }
+
+        .form-tab {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .form-tab.active {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .form-panel {
+            display: none;
+        }
+
+        .form-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group label .required {
+            color: var(--accent-2);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-1);
+            box-shadow: 0 0 0 3px rgba(from var(--accent-1) r g b / 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-row.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .recrues-manager {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .recrues-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .recrues-header h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .recrues-count {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-1-deep);
+            background: var(--accent-1-pale);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .recrues-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .recrue-item {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            flex-wrap: wrap;
+        }
+
+        .recrue-item .recrue-type-indicator {
+            min-width: 100px;
+        }
+
+        .recrue-item input[type="text"] {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .recrue-item select {
+            width: 140px;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .recrue-remove {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: var(--accent-2-pale);
+            color: var(--accent-2-deep);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .recrue-remove:hover {
+            background: var(--accent-2);
+            color: var(--text-inverse);
+        }
+
+        .add-recrue {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px dashed var(--border-light);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .add-recrue:hover {
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+            background: var(--accent-1-pale);
+        }
+
+        .add-recrue:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* RECRUIT TYPE VISUAL DISTINCTIONS */
+        .recrue-type-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .recrue-type-indicator .type-icon {
+            font-size: 0.9rem;
+        }
+
+        /* Type: Réelle - Green/Trustworthy */
+        .recrue-type-reelle {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            border: 1px solid #28a745;
+        }
+
+        /* Type: Fictive - Purple/Imaginative */
+        .recrue-type-fictive {
+            background: linear-gradient(135deg, #e2d9f3, #d4c4e8);
+            color: #563d7c;
+            border: 1px solid #7952b3;
+        }
+
+        /* Type: Moi-même - Blue/Self */
+        .recrue-type-moi {
+            background: linear-gradient(135deg, #cce5ff, #b8daff);
+            color: #004085;
+            border: 1px solid #007bff;
+        }
+
+        /* Type: Fonction - Orange/Role */
+        .recrue-type-fonction {
+            background: linear-gradient(135deg, #ffe5cc, #ffd9b3);
+            color: #854d00;
+            border: 1px solid #fd7e14;
+        }
+
+        .recrue-item.type-reelle {
+            border-left: 4px solid #28a745;
+        }
+
+        .recrue-item.type-fictive {
+            border-left: 4px solid #7952b3;
+        }
+
+        .recrue-item.type-moi {
+            border-left: 4px solid #007bff;
+        }
+
+        .recrue-item.type-fonction {
+            border-left: 4px solid #fd7e14;
+        }
+
+        /* Timeline event type distinctions */
+        .timeline-type-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+
+        .timeline-type-creation {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .timeline-type-soumission {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .timeline-type-reponse {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .timeline-type-silence {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .timeline-type-validation {
+            background: #e8f5e9;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .timeline-type-refus {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .timeline-type-bascule {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            color: #6a1b9a;
+            font-weight: 700;
+        }
+
+        .timeline-type-autre {
+            background: #eceff1;
+            color: #546e7a;
+        }
+
+        /* Status badges with more distinction */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-en-cours {
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            color: #f57f17;
+            border: 2px solid #fbc02d;
+            box-shadow: 0 2px 8px rgba(251, 192, 45, 0.3);
+        }
+
+        .status-soumis {
+            background: linear-gradient(135deg, #bbdefb, #90caf9);
+            color: #1565c0;
+            border: 2px solid #42a5f5;
+            box-shadow: 0 2px 8px rgba(66, 165, 245, 0.3);
+        }
+
+        .status-valide {
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+            color: #2e7d32;
+            border: 2px solid #66bb6a;
+            box-shadow: 0 2px 8px rgba(102, 187, 106, 0.3);
+        }
+
+        .status-refuse {
+            background: linear-gradient(135deg, #ffcdd2, #ef9a9a);
+            color: #c62828;
+            border: 2px solid #ef5350;
+            box-shadow: 0 2px 8px rgba(239, 83, 80, 0.3);
+        }
+
+        .status-bascule {
+            background: linear-gradient(135deg, #e1bee7, #ce93d8, #ba68c8);
+            color: #4a148c;
+            border: 2px solid #ab47bc;
+            box-shadow: 0 2px 8px rgba(171, 71, 188, 0.4);
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 2px 8px rgba(171, 71, 188, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(171, 71, 188, 0.6); }
+        }
+
+        .timeline-manager {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-header h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            flex-wrap: wrap;
+        }
+
+        .timeline-item input[type="date"] {
+            width: 140px;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .timeline-item .timeline-type-indicator {
+            min-width: 90px;
+        }
+
+        .timeline-item input[type="text"] {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .timeline-item select {
+            width: 150px;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .add-timeline {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px dashed var(--border-light);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .add-timeline:hover {
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+            background: var(--accent-1-pale);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .form-actions .btn {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            border-color: var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-2-pale);
+            border-color: var(--accent-2);
+        }
+
+        .form-note {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .preview-section {
+            margin-top: 1rem;
+        }
+
+        .preview-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* Preview Tabs */
+        .preview-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .preview-tab {
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .preview-tab:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        .preview-tab.active {
+            background: var(--accent-1);
+            color: var(--text-inverse);
+            border-color: var(--accent-1);
+        }
+
+        .preview-panel {
+            display: none;
+        }
+
+        .preview-panel.active {
+            display: block;
+        }
+
+        .preview-frame {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+
+        .preview-frame.fullpage {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-toolbar {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+            align-items: center;
+        }
+
+        .preview-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .preview-dot.red { background: #ff5f56; }
+        .preview-dot.yellow { background: #ffbd2e; }
+        .preview-dot.green { background: #27ca40; }
+
+        .preview-url {
+            flex: 1;
+            margin-left: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-light);
+        }
+
+        .preview-refresh,
+        .preview-newtab {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .preview-refresh:hover,
+        .preview-newtab:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        .preview-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: white;
+        }
+
+        .preview-hint {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        .preview-content {
+            padding: 1.5rem;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .preview-placeholder {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 3rem;
+        }
+
+        .preview-placeholder span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Embed Section */
+        .embed-section {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .embed-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .embed-section > p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .embed-option {
+            margin-bottom: 1rem;
+        }
+
+        .embed-option label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+        }
+
+        .embed-code {
+            display: flex;
+            gap: 0.5rem;
+            align-items: stretch;
+        }
+
+        .embed-code code {
+            flex: 1;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.6rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .embed-code button {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .embed-code button:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        /* README Section */
+        .readme-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .readme-toggle {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .readme-toggle:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+
+        .readme-toggle::after {
+            content: '▼';
+            margin-left: auto;
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .readme-toggle.open::after {
+            transform: rotate(180deg);
+        }
+
+        .readme-content {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .readme-content.open {
+            display: block;
+        }
+
+        .readme-viewer {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .readme-viewer h1 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-1);
+        }
+
+        .readme-viewer h2 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-1-deep);
+        }
+
+        .readme-viewer h3 {
+            font-size: 1rem;
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+        }
+
+        .readme-viewer p {
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+
+        .readme-viewer code {
+            font-family: var(--font-mono);
+            background: var(--bg-secondary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .readme-viewer pre {
+            background: var(--bg-dark);
+            color: var(--text-inverse);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .readme-viewer pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .readme-viewer ul, .readme-viewer ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .readme-viewer li {
+            margin: 0.3rem 0;
+        }
+
+        .readme-viewer blockquote {
+            border-left: 3px solid var(--accent-1);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .readme-viewer table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .readme-viewer th, .readme-viewer td {
+            padding: 0.6rem;
+            border: 1px solid var(--border-light);
+            text-align: left;
+        }
+
+        .readme-viewer th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+
+        .readme-viewer hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 1.5rem 0;
+        }
+
+        /* CTA */
+        .cta-final {
+            background: var(--gradient-primary);
+            text-align: center;
+            padding: 6rem 3rem;
+        }
+
+        .cta-final h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: var(--title-weight);
+            margin-bottom: 1rem;
+            color: var(--text-inverse);
+        }
+
+        .cta-final p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cta-final .btn {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-inverse);
+            padding: 5rem 3rem 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-brand .logo {
+            color: var(--text-inverse);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-1);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-links ul { list-style: none; }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 0.4rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--accent-2-light); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-2-pale);
+            color: var(--accent-2);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-success {
+            text-align: center;
+        }
+
+        .modal-success .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-success h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .modal-success p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .download-btn:hover {
+            border-color: var(--accent-1);
+            background: var(--accent-1-pale);
+        }
+
+        .download-btn .icon {
+            font-size: 1.5rem;
+        }
+
+        .download-btn .info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .download-btn .info strong {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .download-btn .info span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: var(--shadow-medium);
+            }
+
+            .nav-links.open { display: flex; }
+            .mobile-menu { display: flex; }
+
+            section { padding: 4rem 1.5rem; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero-decoration { display: none; }
+
+            .form-container { padding: 2rem 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .form-row.three { grid-template-columns: 1fr; }
+
+            .recrue-item { flex-wrap: wrap; }
+            .recrue-item select { width: 100%; }
+
+            .timeline-item { flex-wrap: wrap; }
+            .timeline-item input[type="date"] { width: 100%; }
+            .timeline-item select { width: 100%; }
+
+            .switcher-panel { bottom: 1rem; right: 1rem; }
+            .switcher-options { max-width: calc(100vw - 2rem); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::selection {
+            background: var(--accent-1-light);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body data-theme="clair" data-style="elegant">
+    <!-- SWITCHER PANEL -->
+    <div class="switcher-panel">
+        <div class="switcher-options" id="switcherOptions">
+            <div class="switcher-section">
+                <h4><span>🎨</span> Thème</h4>
+                <div class="switcher-grid">
+                    <button class="theme-btn active" data-theme="clair">
+                        <span class="theme-icon">☀️</span>
+                        <span class="theme-name">Clair</span>
+                    </button>
+                    <button class="theme-btn" data-theme="sombre">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-name">Sombre</span>
+                    </button>
+                    <button class="theme-btn" data-theme="disco">
+                        <span class="theme-icon">🪩</span>
+                        <span class="theme-name">Disco</span>
+                    </button>
+                    <button class="theme-btn" data-theme="neon">
+                        <span class="theme-icon">💜</span>
+                        <span class="theme-name">Néon</span>
+                    </button>
+                    <button class="theme-btn" data-theme="retrogeek">
+                        <span class="theme-icon">👾</span>
+                        <span class="theme-name">Retro</span>
+                    </button>
+                    <button class="theme-btn" data-theme="console">
+                        <span class="theme-icon">💻</span>
+                        <span class="theme-name">Console</span>
+                    </button>
+                </div>
+            </div>
+            <div class="switcher-section">
+                <h4><span>Aa</span> Typographie</h4>
+                <div class="style-list">
+                    <button class="style-btn active" data-style="elegant">
+                        <span class="style-name">Élégant</span>
+                        <span class="style-preview">Playfair + Work Sans</span>
+                    </button>
+                    <button class="style-btn" data-style="organique">
+                        <span class="style-name">Organique</span>
+                        <span class="style-preview">Fraunces + Manrope</span>
+                    </button>
+                    <button class="style-btn" data-style="editorial">
+                        <span class="style-name">Editorial</span>
+                        <span class="style-preview">DM Serif + Inter</span>
+                    </button>
+                    <button class="style-btn" data-style="litteraire">
+                        <span class="style-name">Littéraire</span>
+                        <span class="style-preview">Baskerville + Archivo</span>
+                    </button>
+                    <button class="style-btn" data-style="poetique">
+                        <span class="style-name">Poétique</span>
+                        <span class="style-preview">Instrument + Jakarta</span>
+                    </button>
+                    <button class="style-btn" data-style="brut">
+                        <span class="style-name">Brut</span>
+                        <span class="style-preview">Bricolage + Crimson</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="switcher-toggle" id="switcherToggle" title="Personnaliser">⚙️</button>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>🎉 Page générée !</h3>
+                <button class="modal-close" id="modalClose">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-success">
+                    <div class="icon">📄</div>
+                    <h4>Votre action est prête à être publiée</h4>
+                    <p>Téléchargez votre page HTML autonome et publiez-la où vous voulez.</p>
+                </div>
+                <div class="download-options">
+                    <a href="#" class="download-btn" id="downloadHtml">
+                        <span class="icon">💾</span>
+                        <div class="info">
+                            <strong>Télécharger la page HTML</strong>
+                            <span>Fichier autonome à publier sur n'importe quel hébergeur</span>
+                        </div>
+                    </a>
+                    <a href="#" class="download-btn" id="downloadJson">
+                        <span class="icon">📦</span>
+                        <div class="info">
+                            <strong>Télécharger le JSON</strong>
+                            <span>Fichier de données pour import ultérieur</span>
+                        </div>
+                    </a>
+                    <button class="download-btn" id="copyLink">
+                        <span class="icon">📋</span>
+                        <div class="info">
+                            <strong>Copier les données JSON</strong>
+                            <span>Pour archivage ou import ultérieur</span>
+                        </div>
+                    </button>
+                    <button class="download-btn" id="shareTwitter">
+                        <span class="icon">🐦</span>
+                        <div class="info">
+                            <strong>Partager sur X/Twitter</strong>
+                            <span>Annoncer votre action</span>
+                        </div>
+                    </button>
+                    <button class="download-btn" id="shareMastodon">
+                        <span class="icon">🐘</span>
+                        <div class="info">
+                            <strong>Partager sur Mastodon</strong>
+                            <span>Annoncer votre action</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARKDOWN HELP MODAL -->
+    <div class="md-help-modal" id="mdHelpModal">
+        <div class="md-help-content">
+            <h3>📝 Guide Markdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Syntaxe</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>**texte**</code></td>
+                        <td><strong>texte en gras</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>*texte*</code></td>
+                        <td><em>texte en italique</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>~~texte~~</code></td>
+                        <td><del>texte barré</del></td>
+                    </tr>
+                    <tr>
+                        <td><code>`code`</code></td>
+                        <td><code>code inline</code></td>
+                    </tr>
+                    <tr>
+                        <td><code># Titre</code></td>
+                        <td>Titre niveau 1</td>
+                    </tr>
+                    <tr>
+                        <td><code>## Sous-titre</code></td>
+                        <td>Titre niveau 2</td>
+                    </tr>
+                    <tr>
+                        <td><code>- élément</code></td>
+                        <td>Liste à puces</td>
+                    </tr>
+                    <tr>
+                        <td><code>1. élément</code></td>
+                        <td>Liste numérotée</td>
+                    </tr>
+                    <tr>
+                        <td><code>> citation</code></td>
+                        <td>Bloc de citation</td>
+                    </tr>
+                    <tr>
+                        <td><code>[texte](url)</code></td>
+                        <td>Lien hypertexte</td>
+                    </tr>
+                    <tr>
+                        <td><code>![alt](url)</code></td>
+                        <td>Image</td>
+                    </tr>
+                    <tr>
+                        <td><code>---</code></td>
+                        <td>Ligne horizontale</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Raccourcis clavier :</strong> Ctrl+B (gras), Ctrl+I (italique), Ctrl+S (sauvegarder)
+            </p>
+            <button class="md-help-close" onclick="closeMdHelp()">Compris !</button>
+        </div>
+    </div>
+
+    <!-- KEYBOARD SHORTCUTS HINT -->
+    <div class="shortcuts-hint" id="shortcutsHint">
+        <kbd>Ctrl</kbd>+<kbd>B</kbd> Gras • <kbd>Ctrl</kbd>+<kbd>I</kbd> Italique • <kbd>Ctrl</kbd>+<kbd>S</kbd> Sauvegarder
+    </div>
+
+    <nav id="navbar">
+        <div class="logo">
+            <span class="logo-dot"></span>
+            LA RÉSERVE
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#comment">Comment ça marche</a></li>
+            <li><a href="#declarer">Créer une action</a></li>
+            <li><a href="#" class="btn btn-primary">Déclarer</a></li>
+        </ul>
+        <div class="mobile-menu" id="mobileMenu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-decoration"></div>
+        <span class="hero-label">Système ouvert depuis 2025</span>
+        <h1>La <span class="highlight">Réserve</span></h1>
+        <p class="hero-subtitle">Ce qui existe déjà mais n'a jamais été reconnu.</p>
+        <div class="hero-cta">
+            <a href="#declarer" class="btn btn-primary">Créer mon action</a>
+            <a href="#comment" class="btn">Comprendre</a>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>Pas de règles</span><span class="dot"></span>
+                <span>Pas de jury</span><span class="dot"></span>
+                <span>Pas de deadline</span><span class="dot"></span>
+                <span>Pas de bonne réponse</span><span class="dot"></span>
+                <span>Juste le réel</span><span class="dot"></span>
+                <span>Pas de règles</span><span class="dot"></span>
+                <span>Pas de jury</span><span class="dot"></span>
+                <span>Pas de deadline</span><span class="dot"></span>
+                <span>Pas de bonne réponse</span><span class="dot"></span>
+                <span>Juste le réel</span><span class="dot"></span>
+            </div>
+            <div class="marquee-content">
+                <span>Pas de règles</span><span class="dot"></span>
+                <span>Pas de jury</span><span class="dot"></span>
+                <span>Pas de deadline</span><span class="dot"></span>
+                <span>Pas de bonne réponse</span><span class="dot"></span>
+                <span>Juste le réel</span><span class="dot"></span>
+                <span>Pas de règles</span><span class="dot"></span>
+                <span>Pas de jury</span><span class="dot"></span>
+                <span>Pas de deadline</span><span class="dot"></span>
+                <span>Pas de bonne réponse</span><span class="dot"></span>
+                <span>Juste le réel</span><span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="axiome">
+        <div class="axiome-content reveal">
+            <blockquote>
+                Toute personne peut entrer dans le système <em>à n'importe quel moment</em>, par n'importe quelle action légale, et en sortir <em>sans justification</em>.
+            </blockquote>
+            <p>Il n'y a pas de début. Pas de fin. Pas de bonne manière. Pas de mauvaise candidature.</p>
+        </div>
+    </section>
+
+    <section class="process" id="comment">
+        <div class="section-header reveal">
+            <span class="section-label">Le principe</span>
+            <h2 class="section-title">Comment ça fonctionne</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-card reveal" data-step="01">
+                <h3>Détourner</h3>
+                <p>Vous détournez quelque chose qui existe dans le monde du travail : une offre, un site, une procédure, un silence.</p>
+            </div>
+            <div class="process-card reveal" data-step="02">
+                <h3>Recruter</h3>
+                <p>Vous recrutez jusqu'à 9 personnes. Réelles, fictives, vous-même sous plusieurs rôles.</p>
+            </div>
+            <div class="process-card reveal" data-step="03">
+                <h3>Soumettre</h3>
+                <p>Vous contactez une ASBL belge pour reconnaissance. Elle peut valider, ignorer, ou détourner à son tour.</p>
+            </div>
+            <div class="process-card reveal" data-step="04">
+                <h3>Basculer</h3>
+                <p>Si l'ASBL promeut le travail — la réserve devient réelle. Le jeu ne se distingue plus du réel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="declarer">
+        <div class="section-header reveal" style="text-align: center;">
+            <span class="section-label">Créer</span>
+            <h2 class="section-title">Générer votre page d'action</h2>
+        </div>
+        <div class="form-container reveal">
+            <div class="form-intro">
+                <h3>Créez votre action</h3>
+                <p>Remplissez ce formulaire pour générer une page web autonome que vous pourrez publier n'importe où.</p>
+            </div>
+
+            <!-- TEMPLATES -->
+            <div class="templates-section">
+                <label style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.8rem; display: block;">💡 Démarrer avec un modèle</label>
+                <div class="templates-grid">
+                    <div class="template-card" onclick="loadTemplate('offre')">
+                        <div class="icon">📋</div>
+                        <div class="name">Offre d'emploi</div>
+                        <div class="desc">Détourner une offre existante</div>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('silence')">
+                        <div class="icon">🔇</div>
+                        <div class="name">Silence</div>
+                        <div class="desc">Répondre à un non-retour</div>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('procedure')">
+                        <div class="icon">📑</div>
+                        <div class="name">Procédure</div>
+                        <div class="desc">Détourner une démarche admin</div>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('site')">
+                        <div class="icon">🌐</div>
+                        <div class="name">Site web</div>
+                        <div class="desc">Détourner un site employeur</div>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('vide')">
+                        <div class="icon">✨</div>
+                        <div class="name">Vide</div>
+                        <div class="desc">Partir de zéro</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="form-progress" id="formProgress">
+                <div class="progress-step active" data-step="base">
+                    <div class="step-dot">1</div>
+                    <div class="step-label">Infos</div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-step" data-step="recrues">
+                    <div class="step-dot">2</div>
+                    <div class="step-label">Recrues</div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-step" data-step="timeline">
+                    <div class="step-dot">3</div>
+                    <div class="step-label">Timeline</div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-step" data-step="preview">
+                    <div class="step-dot">4</div>
+                    <div class="step-label">Aperçu</div>
+                </div>
+            </div>
+
+            <div class="form-tabs">
+                <button class="form-tab active" data-panel="base">📝 Infos de base</button>
+                <button class="form-tab" data-panel="recrues">👥 Recrues</button>
+                <button class="form-tab" data-panel="timeline">📅 Timeline</button>
+                <button class="form-tab" data-panel="preview">👁️ Aperçu</button>
+            </div>
+
+            <!-- JSON IMPORT -->
+            <div style="margin-bottom: 1rem; text-align: right;">
+                <input type="file" id="jsonImport" accept=".json" style="display: none;" onchange="importJson(event)">
+                <button type="button" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="document.getElementById('jsonImport').click()">
+                    📥 Importer un JSON
+                </button>
+            </div>
+
+            <form id="declarationForm">
+                <!-- PANEL: BASE -->
+                <div class="form-panel active" id="panel-base">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Pseudonyme ou nom</label>
+                            <input type="text" id="pseudo" name="pseudo" placeholder="Anonyme accepté">
+                        </div>
+                        <div class="form-group">
+                            <label>Lieu</label>
+                            <input type="text" id="lieu" name="lieu" placeholder="Bruxelles, Liège, en ligne...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Titre de votre action <span class="required">*</span></label>
+                        <input type="text" id="titre" name="titre" placeholder="Ex: Coordinateur·rice de silences" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Type de détournement</label>
+                            <select id="type" name="type">
+                                <option value="">Sélectionnez...</option>
+                                <option value="offre">Offre d'emploi</option>
+                                <option value="site">Site d'employeur</option>
+                                <option value="procedure">Procédure administrative</option>
+                                <option value="mail">Mail automatique</option>
+                                <option value="silence">Silence / Refus</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Statut actuel</label>
+                            <select id="statut" name="statut">
+                                <option value="en-cours">🟡 En cours</option>
+                                <option value="soumis">🔵 Soumis à une ASBL</option>
+                                <option value="valide">🟢 Validé</option>
+                                <option value="refuse">🔴 Refusé</option>
+                                <option value="bascule">🌟 Basculé dans le réel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description de l'action <span class="required">*</span></label>
+                        <div class="md-editor">
+                            <div class="md-toolbar">
+                                <button type="button" onclick="mdInsert('**', '**')" title="Gras (Ctrl+B)"><strong>B</strong></button>
+                                <button type="button" onclick="mdInsert('*', '*')" title="Italique (Ctrl+I)"><em>I</em></button>
+                                <button type="button" onclick="mdInsert('~~', '~~')" title="Barré"><s>S</s></button>
+                                <button type="button" onclick="mdInsert('`', '`')" title="Code inline">&lt;/&gt;</button>
+                                <span class="separator"></span>
+                                <button type="button" onclick="mdInsertLine('# ')" title="Titre 1">H1</button>
+                                <button type="button" onclick="mdInsertLine('## ')" title="Titre 2">H2</button>
+                                <button type="button" onclick="mdInsertLine('### ')" title="Titre 3">H3</button>
+                                <span class="separator"></span>
+                                <button type="button" onclick="mdInsertLine('- ')" title="Liste à puces">•</button>
+                                <button type="button" onclick="mdInsertLine('1. ')" title="Liste numérotée">1.</button>
+                                <button type="button" onclick="mdInsertLine('> ')" title="Citation">❝</button>
+                                <button type="button" onclick="mdInsertLine('---')" title="Séparateur">―</button>
+                                <span class="separator"></span>
+                                <button type="button" onclick="mdInsert('[', '](url)')" title="Lien">🔗</button>
+                                <button type="button" onclick="mdInsert('![alt](', ')')" title="Image">🖼️</button>
+                                <span class="separator"></span>
+                                <button type="button" id="mdViewEdit" onclick="mdToggleView('edit')" class="active" title="Édition">✏️</button>
+                                <button type="button" id="mdViewSplit" onclick="mdToggleView('split')" title="Édition + Aperçu">◧</button>
+                                <button type="button" id="mdViewPreview" onclick="mdToggleView('preview')" title="Aperçu">👁️</button>
+                                <span class="spacer"></span>
+                                <button type="button" class="md-help" onclick="openMdHelp()">? Aide Markdown</button>
+                            </div>
+                            <div class="md-content edit-only" id="mdContent">
+                                <div class="md-input-wrap">
+                                    <div class="md-label">Édition (Markdown)</div>
+                                    <textarea class="md-input" id="description" name="description" placeholder="# Mon action
+
+Décrivez votre détournement en utilisant **Markdown** pour le formater.
+
+## Ce que j'ai fait
+- Point 1
+- Point 2
+
+## Pourquoi
+> Une citation inspirante
+
+*L'idée était de...*" required></textarea>
+                                </div>
+                                <div class="md-preview-wrap">
+                                    <div class="md-label">Aperçu</div>
+                                    <div class="md-preview" id="mdPreview"></div>
+                                </div>
+                            </div>
+                            <div class="md-footer">
+                                <div class="md-stats">
+                                    <span id="mdChars">0 caractères</span>
+                                    <span id="mdWords">0 mots</span>
+                                </div>
+                                <div class="md-autosave" id="mdAutosave">
+                                    <span>💾</span> Sauvegarde auto
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attachments -->
+                    <div class="attachments-section" id="attachmentsSection">
+                        <h4>📎 Pièces jointes (optionnel)</h4>
+                        <p>Glissez-déposez des fichiers ou cliquez pour ajouter des preuves, captures d'écran, documents...</p>
+                        <input type="file" id="attachmentInput" class="attachment-input" multiple accept="image/*,.pdf,.doc,.docx,.txt">
+                        <label for="attachmentInput" class="attachment-btn">
+                            <span>📁</span> Choisir des fichiers
+                        </label>
+                        <div class="attachments-list" id="attachmentsList"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>ASBL visée</label>
+                            <input type="text" id="asbl" name="asbl" placeholder="Nom de l'ASBL contactée">
+                        </div>
+                        <div class="form-group">
+                            <label>Lien source (détournée)</label>
+                            <input type="url" id="lienSource" name="lienSource" placeholder="https://...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Lien vers votre détournement</label>
+                        <input type="url" id="lienAction" name="lienAction" placeholder="https://...">
+                    </div>
+                </div>
+
+                <!-- PANEL: RECRUES -->
+                <div class="form-panel" id="panel-recrues">
+                    <div class="recrues-manager">
+                        <div class="recrues-header">
+                            <h4>Vos recrues</h4>
+                            <span class="recrues-count"><span id="recruesCount">0</span>/9</span>
+                        </div>
+                        <div class="recrues-list" id="recruesList"></div>
+                        <button type="button" class="add-recrue" id="addRecrue">+ Ajouter une recrue</button>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                        Les recrues peuvent être réelles, fictives, ou vous-même sous différents rôles. Le type indique leur nature dans le jeu.
+                    </p>
+                </div>
+
+                <!-- PANEL: TIMELINE -->
+                <div class="form-panel" id="panel-timeline">
+                    <div class="timeline-manager">
+                        <div class="timeline-header">
+                            <h4>Journal de bord</h4>
+                        </div>
+                        <div class="timeline-list" id="timelineList"></div>
+                        <button type="button" class="add-timeline" id="addTimeline">+ Ajouter une entrée</button>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                        Documentez les étapes de votre action : soumissions, réponses, silences, rebondissements...
+                    </p>
+                </div>
+
+                <!-- PANEL: PREVIEW -->
+                <div class="form-panel" id="panel-preview">
+                    <div class="preview-section">
+                        <div class="preview-tabs">
+                            <button type="button" class="preview-tab active" data-preview="summary">📋 Résumé</button>
+                            <button type="button" class="preview-tab" data-preview="full">🖥️ Page complète</button>
+                            <button type="button" class="preview-tab" data-preview="embed">📦 Code embed</button>
+                        </div>
+                        
+                        <!-- Summary Preview -->
+                        <div class="preview-panel active" id="preview-summary">
+                            <div class="preview-frame">
+                                <div class="preview-toolbar">
+                                    <span class="preview-dot red"></span>
+                                    <span class="preview-dot yellow"></span>
+                                    <span class="preview-dot green"></span>
+                                </div>
+                                <div class="preview-content" id="previewContent">
+                                    <div class="preview-placeholder">
+                                        <span>📄</span>
+                                        <p>Remplissez le formulaire pour voir l'aperçu</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Full Page Preview (iframe) -->
+                        <div class="preview-panel" id="preview-full">
+                            <div class="preview-frame fullpage">
+                                <div class="preview-toolbar">
+                                    <span class="preview-dot red"></span>
+                                    <span class="preview-dot yellow"></span>
+                                    <span class="preview-dot green"></span>
+                                    <span class="preview-url">action-preview.html</span>
+                                    <button type="button" class="preview-refresh" onclick="refreshFullPreview()">🔄</button>
+                                    <button type="button" class="preview-newtab" onclick="openPreviewNewTab()">↗️</button>
+                                </div>
+                                <iframe id="fullPreviewFrame" class="preview-iframe"></iframe>
+                            </div>
+                            <p class="preview-hint">💡 Aperçu en temps réel de votre page générée. Cliquez sur 🔄 pour rafraîchir.</p>
+                        </div>
+                        
+                        <!-- Embed Code -->
+                        <div class="preview-panel" id="preview-embed">
+                            <div class="embed-section">
+                                <h4>📦 Intégrer votre action</h4>
+                                <p>Copiez ce code pour intégrer votre action sur un autre site :</p>
+                                
+                                <div class="embed-option">
+                                    <label>🔗 Lien direct</label>
+                                    <div class="embed-code">
+                                        <code id="embedLink">https://votre-site.com/action-LR-XXXXXXX.html</code>
+                                        <button type="button" onclick="copyEmbed('link')">📋</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="embed-option">
+                                    <label>📄 Iframe</label>
+                                    <div class="embed-code">
+                                        <code id="embedIframe">&lt;iframe src="action.html" width="100%" height="600"&gt;&lt;/iframe&gt;</code>
+                                        <button type="button" onclick="copyEmbed('iframe')">📋</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="embed-option">
+                                    <label>🎴 Carte de partage (Open Graph)</label>
+                                    <div class="embed-code">
+                                        <code id="embedOg">&lt;meta property="og:title" content="..."&gt;</code>
+                                        <button type="button" onclick="copyEmbed('og')">📋</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="embed-option">
+                                    <label>📝 Markdown</label>
+                                    <div class="embed-code">
+                                        <code id="embedMarkdown">[Titre de l'action](url)</code>
+                                        <button type="button" onclick="copyEmbed('markdown')">📋</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- README Section -->
+                    <div class="readme-section">
+                        <button type="button" class="readme-toggle" onclick="toggleReadme()">
+                            📖 Comment utiliser La Réserve ? (README)
+                        </button>
+                        <div class="readme-content" id="readmeContent">
+                            <div class="readme-viewer" id="readmeViewer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="saveLocal">
+                        💾 Sauvegarder en local
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        🚀 Générer ma page
+                    </button>
+                </div>
+
+                <div class="form-note">
+                    <strong>💡 Ce qui sera généré :</strong> Une page HTML autonome avec le thème <strong id="currentThemeDisplay">clair</strong> et la typographie <strong id="currentStyleDisplay">élégant</strong> actuellement sélectionnés. La page inclura un QR code, les boutons de partage, et un compteur de temps depuis la création.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <h2>Vous êtes déjà dedans.</h2>
+        <p>Si vous cherchez des règles, ce n'est pas ici.<br>Si vous cherchez un cadre pour agir, vous y êtes.</p>
+        <a href="#declarer" class="btn">Créer ma première action</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-dot"></span>
+                    LA RÉSERVE
+                </div>
+                <p>Ce qui existe déjà mais n'a jamais été reconnu.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#comment">Comment ça marche</a></li>
+                    <li><a href="#declarer">Créer une action</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Vie privée</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 La Réserve — Système ouvert</p>
+            <p>Belgique</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // MARKDOWN EDITOR
+        // ============================================
+        const mdInput = document.getElementById('description');
+        const mdPreview = document.getElementById('mdPreview');
+        const mdContent = document.getElementById('mdContent');
+        const mdChars = document.getElementById('mdChars');
+        const mdWords = document.getElementById('mdWords');
+        const mdAutosave = document.getElementById('mdAutosave');
+        let mdCurrentView = 'edit';
+        let autosaveTimeout;
+
+        // Simple Markdown parser
+        function parseMarkdown(text) {
+            if (!text) return '';
+            
+            let html = text
+                // Escape HTML
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                
+                // Code blocks (before other processing)
+                .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
+                
+                // Inline code
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                
+                // Headers
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                
+                // Bold and italic
+                .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/~~(.+?)~~/g, '<del>$1</del>')
+                
+                // Links and images
+                .replace(/!\[([^\]]*)\]\(([^\)]+)\)/g, '<img src="$2" alt="$1">')
+                .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                
+                // Blockquotes
+                .replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>')
+                
+                // Horizontal rule
+                .replace(/^---$/gm, '<hr>')
+                
+                // Unordered lists
+                .replace(/^\- (.*$)/gm, '<li>$1</li>')
+                .replace(/^\* (.*$)/gm, '<li>$1</li>')
+                
+                // Ordered lists
+                .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+                
+                // Paragraphs (lines not already processed)
+                .replace(/^(?!<[hblpuo]|<li|<hr|<pre|<code)(.+)$/gm, '<p>$1</p>')
+                
+                // Wrap consecutive li elements in ul
+                .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+                
+                // Clean up
+                .replace(/<\/blockquote>\n<blockquote>/g, '\n')
+                .replace(/\n/g, '');
+                
+            return html;
+        }
+
+        function updateMdPreview() {
+            if (mdPreview) {
+                mdPreview.innerHTML = parseMarkdown(mdInput.value);
+            }
+            updateMdStats();
+            triggerAutosave();
+        }
+
+        function updateMdStats() {
+            const text = mdInput.value;
+            const chars = text.length;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            if (mdChars) mdChars.textContent = `${chars} caractères`;
+            if (mdWords) mdWords.textContent = `${words} mots`;
+        }
+
+        function triggerAutosave() {
+            clearTimeout(autosaveTimeout);
+            if (mdAutosave) {
+                mdAutosave.className = 'md-autosave saving';
+                mdAutosave.innerHTML = '<span>💾</span> Sauvegarde...';
+            }
+            autosaveTimeout = setTimeout(() => {
+                saveLocalDraft();
+                if (mdAutosave) {
+                    mdAutosave.className = 'md-autosave saved';
+                    mdAutosave.innerHTML = '<span>✓</span> Sauvegardé';
+                }
+            }, 1000);
+        }
+
+        function mdToggleView(view) {
+            mdCurrentView = view;
+            if (mdContent) {
+                mdContent.className = 'md-content ' + (view === 'edit' ? 'edit-only' : view === 'preview' ? 'preview-only' : '');
+            }
+            document.getElementById('mdViewEdit')?.classList.toggle('active', view === 'edit');
+            document.getElementById('mdViewSplit')?.classList.toggle('active', view === 'split');
+            document.getElementById('mdViewPreview')?.classList.toggle('active', view === 'preview');
+            if (view !== 'edit') updateMdPreview();
+        }
+
+        function mdInsert(before, after) {
+            const start = mdInput.selectionStart;
+            const end = mdInput.selectionEnd;
+            const text = mdInput.value;
+            const selected = text.substring(start, end);
+            mdInput.value = text.substring(0, start) + before + selected + after + text.substring(end);
+            mdInput.focus();
+            mdInput.setSelectionRange(start + before.length, start + before.length + selected.length);
+            updateMdPreview();
+        }
+
+        function mdInsertLine(prefix) {
+            const start = mdInput.selectionStart;
+            const text = mdInput.value;
+            const lineStart = text.lastIndexOf('\n', start - 1) + 1;
+            mdInput.value = text.substring(0, lineStart) + prefix + text.substring(lineStart);
+            mdInput.focus();
+            mdInput.setSelectionRange(lineStart + prefix.length, lineStart + prefix.length);
+            updateMdPreview();
+        }
+
+        function openMdHelp() {
+            document.getElementById('mdHelpModal').classList.add('open');
+        }
+
+        function closeMdHelp() {
+            document.getElementById('mdHelpModal').classList.remove('open');
+        }
+
+        // Initialize Markdown editor
+        if (mdInput) {
+            mdInput.addEventListener('input', updateMdPreview);
+            mdInput.addEventListener('keydown', (e) => {
+                // Ctrl+B for bold
+                if (e.ctrlKey && e.key === 'b') {
+                    e.preventDefault();
+                    mdInsert('**', '**');
+                }
+                // Ctrl+I for italic
+                if (e.ctrlKey && e.key === 'i') {
+                    e.preventDefault();
+                    mdInsert('*', '*');
+                }
+                // Ctrl+S for save
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    saveLocalDraft();
+                    if (mdAutosave) {
+                        mdAutosave.className = 'md-autosave saved';
+                        mdAutosave.innerHTML = '<span>✓</span> Sauvegardé';
+                    }
+                }
+                // Tab for indent
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    mdInsert('  ', '');
+                }
+            });
+            // Show shortcuts hint on focus
+            mdInput.addEventListener('focus', () => {
+                document.getElementById('shortcutsHint')?.classList.add('visible');
+            });
+            mdInput.addEventListener('blur', () => {
+                setTimeout(() => {
+                    document.getElementById('shortcutsHint')?.classList.remove('visible');
+                }, 2000);
+            });
+        }
+
+        // Close help modal on click outside
+        document.getElementById('mdHelpModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'mdHelpModal') closeMdHelp();
+        });
+
+        // ============================================
+        // TEMPLATES
+        // ============================================
+        const templates = {
+            offre: {
+                titre: "Coordinateur·rice de [votre concept]",
+                type: "offre",
+                description: `# Détournement d'offre d'emploi
+
+## L'offre originale
+J'ai trouvé une offre pour [poste] chez [entreprise] qui demandait [compétences absurdes / contradictoires].
+
+## Mon intervention
+J'ai décidé de **postuler sincèrement** en proposant exactement ce qu'ils demandaient, mais en révélant l'absurdité de leurs attentes.
+
+## Ce que j'ai fait
+- Candidature envoyée le [date]
+- CV adapté au ton de l'offre
+- Lettre de motivation qui prend au mot chaque exigence
+
+## Résultat attendu
+> Soit ils acceptent et le jeu devient réel, soit leur silence devient une œuvre en soi.
+
+*En attente de réponse...*`
+            },
+            silence: {
+                titre: "Réponse au silence de [entreprise]",
+                type: "silence",
+                description: `# Monument au silence
+
+## Contexte
+Candidature envoyée le [date] à [entreprise] pour [poste].
+**Aucune réponse reçue depuis [X] jours.**
+
+## L'action
+Le silence n'est pas une absence — c'est une réponse. J'ai décidé de le **documenter**, de le **nommer**, et de le **soumettre** comme œuvre à part entière.
+
+## Ce que le silence dit
+- Il dit que mon temps n'a pas de valeur
+- Il dit que la politesse est optionnelle
+- Il dit que l'asymétrie est normale
+
+## Ma réponse au silence
+> Je certifie avoir été ignoré·e par [entreprise]. Cette certification a autant de valeur que leur non-réponse.
+
+*Ce document est une trace. La trace est l'œuvre.*`
+            },
+            procedure: {
+                titre: "Détournement de la procédure [nom]",
+                type: "procedure",
+                description: `# Procédure administrative détournée
+
+## La procédure originale
+[Décrivez la procédure : inscription, formulaire, démarche administrative...]
+
+## L'absurdité identifiée
+- [Point absurde 1]
+- [Point absurde 2]
+- [Contradiction évidente]
+
+## Mon détournement
+J'ai suivi la procédure **à la lettre**, en documentant chaque étape, pour révéler ce que le système ne veut pas voir.
+
+### Étapes suivies
+1. [Étape 1] — *commentaire*
+2. [Étape 2] — *commentaire*
+3. [Étape 3] — *commentaire*
+
+## Conclusion
+> En respectant parfaitement les règles, j'ai démontré leur absurdité.`
+            },
+            site: {
+                titre: "Miroir de [site.com]",
+                type: "site",
+                description: `# Site web détourné
+
+## Le site original
+**URL :** [lien vers le site]
+
+Ce site présente [entreprise/organisation] sous son meilleur jour, avec [éléments de communication corporate].
+
+## Ce que j'ai fait
+J'ai créé une **version miroir** qui dit la vérité que le site officiel cache.
+
+## Éléments détournés
+- La page "Nos valeurs" → devient "Nos vraies pratiques"
+- La page "Carrières" → devient "Ce qu'on ne vous dit pas"
+- Les témoignages → deviennent des témoignages réels (ou leur absence)
+
+## Où le voir
+[Lien vers votre détournement]
+
+*Le miroir ne ment pas — il inverse.*`
+            },
+            vide: {
+                titre: "",
+                type: "",
+                description: ""
+            }
+        };
+
+        function loadTemplate(templateId) {
+            const template = templates[templateId];
+            if (!template) return;
+            
+            if (template.titre) document.getElementById('titre').value = template.titre;
+            if (template.type) document.getElementById('type').value = template.type;
+            if (template.description !== undefined) {
+                mdInput.value = template.description;
+                updateMdPreview();
+            }
+            
+            // Scroll to form
+            document.getElementById('titre').focus();
+        }
+
+        // ============================================
+        // ATTACHMENTS
+        // ============================================
+        let attachments = [];
+
+        const attachmentInput = document.getElementById('attachmentInput');
+        const attachmentsList = document.getElementById('attachmentsList');
+        const attachmentsSection = document.getElementById('attachmentsSection');
+
+        if (attachmentInput) {
+            attachmentInput.addEventListener('change', handleFiles);
+        }
+
+        if (attachmentsSection) {
+            attachmentsSection.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                attachmentsSection.classList.add('dragover');
+            });
+            attachmentsSection.addEventListener('dragleave', () => {
+                attachmentsSection.classList.remove('dragover');
+            });
+            attachmentsSection.addEventListener('drop', (e) => {
+                e.preventDefault();
+                attachmentsSection.classList.remove('dragover');
+                handleFiles({ target: { files: e.dataTransfer.files } });
+            });
+        }
+
+        function handleFiles(e) {
+            const files = Array.from(e.target.files);
+            files.forEach(file => {
+                if (attachments.length >= 10) return;
+                attachments.push({
+                    name: file.name,
+                    size: file.size,
+                    type: file.type,
+                    data: null // Would be base64 in real implementation
+                });
+            });
+            renderAttachments();
+        }
+
+        function renderAttachments() {
+            if (!attachmentsList) return;
+            attachmentsList.innerHTML = attachments.map((a, i) => `
+                <div class="attachment-item">
+                    <span>${getFileIcon(a.type)} ${a.name}</span>
+                    <button type="button" class="remove" onclick="removeAttachment(${i})">×</button>
+                </div>
+            `).join('');
+        }
+
+        function getFileIcon(type) {
+            if (type.startsWith('image/')) return '🖼️';
+            if (type === 'application/pdf') return '📄';
+            if (type.includes('word')) return '📝';
+            return '📎';
+        }
+
+        window.removeAttachment = (index) => {
+            attachments.splice(index, 1);
+            renderAttachments();
+        };
+
+        // ============================================
+        // PROGRESS INDICATOR
+        // ============================================
+        function updateProgress(currentPanel) {
+            const steps = ['base', 'recrues', 'timeline', 'preview'];
+            const currentIndex = steps.indexOf(currentPanel);
+            
+            document.querySelectorAll('.progress-step').forEach((step, i) => {
+                step.classList.remove('active', 'completed');
+                if (i < currentIndex) step.classList.add('completed');
+                if (i === currentIndex) step.classList.add('active');
+            });
+            
+            document.querySelectorAll('.progress-bar').forEach((bar, i) => {
+                bar.classList.toggle('filled', i < currentIndex);
+            });
+        }
+
+        // ============================================
+        // JSON IMPORT/EXPORT
+        // ============================================
+        function importJson(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    // Fill form fields
+                    if (data.pseudo) document.getElementById('pseudo').value = data.pseudo;
+                    if (data.lieu) document.getElementById('lieu').value = data.lieu;
+                    if (data.titre) document.getElementById('titre').value = data.titre;
+                    if (data.type) document.getElementById('type').value = data.type;
+                    if (data.statut) document.getElementById('statut').value = data.statut;
+                    if (data.description) {
+                        mdInput.value = data.description;
+                        updateMdPreview();
+                    }
+                    if (data.asbl) document.getElementById('asbl').value = data.asbl;
+                    if (data.lienSource) document.getElementById('lienSource').value = data.lienSource;
+                    if (data.lienAction) document.getElementById('lienAction').value = data.lienAction;
+                    
+                    // Recrues
+                    if (data.recrues && Array.isArray(data.recrues)) {
+                        recrues = data.recrues;
+                        renderRecrues();
+                    }
+                    
+                    // Timeline
+                    if (data.timeline && Array.isArray(data.timeline)) {
+                        timeline = data.timeline;
+                        renderTimeline();
+                    }
+                    
+                    alert('Import réussi ! Vérifiez les données et ajustez si nécessaire.');
+                } catch (err) {
+                    alert('Erreur lors de l\'import : fichier JSON invalide.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function saveLocalDraft() {
+            const data = getFormData();
+            localStorage.setItem('lareserve-draft', JSON.stringify(data));
+        }
+
+        // ============================================
+        // THEME & STYLE SWITCHER
+        // ============================================
+        const switcherToggle = document.getElementById('switcherToggle');
+        const switcherOptions = document.getElementById('switcherOptions');
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const styleBtns = document.querySelectorAll('.style-btn');
+
+        const themeNames = {
+            'clair': 'clair',
+            'sombre': 'sombre',
+            'disco': 'disco',
+            'neon': 'néon',
+            'retrogeek': 'retro',
+            'console': 'console'
+        };
+
+        const styleNames = {
+            'elegant': 'élégant',
+            'organique': 'organique',
+            'editorial': 'editorial',
+            'litteraire': 'littéraire',
+            'poetique': 'poétique',
+            'brut': 'brut'
+        };
+
+        function updateDisplays() {
+            const theme = document.body.getAttribute('data-theme');
+            const style = document.body.getAttribute('data-style');
+            document.getElementById('currentThemeDisplay').textContent = themeNames[theme] || theme;
+            document.getElementById('currentStyleDisplay').textContent = styleNames[style] || style;
+        }
+
+        switcherToggle.addEventListener('click', () => {
+            switcherOptions.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.switcher-panel')) {
+                switcherOptions.classList.remove('open');
+            }
+        });
+
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.getAttribute('data-theme');
+                document.body.setAttribute('data-theme', theme);
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                localStorage.setItem('lareserve-theme', theme);
+                updateDisplays();
+                updatePreview();
+            });
+        });
+
+        styleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const style = btn.getAttribute('data-style');
+                document.body.setAttribute('data-style', style);
+                styleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                localStorage.setItem('lareserve-style', style);
+                updateDisplays();
+                updatePreview();
+            });
+        });
+
+        // Load saved
+        const savedTheme = localStorage.getItem('lareserve-theme');
+        const savedStyle = localStorage.getItem('lareserve-style');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            themeBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-theme') === savedTheme));
+        }
+        if (savedStyle) {
+            document.body.setAttribute('data-style', savedStyle);
+            styleBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-style') === savedStyle));
+        }
+        updateDisplays();
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks.classList.remove('open');
+                }
+            });
+        });
+
+        // Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // ============================================
+        // FORM TABS
+        // ============================================
+        const formTabs = document.querySelectorAll('.form-tab');
+        const formPanels = document.querySelectorAll('.form-panel');
+
+        formTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const panelId = tab.getAttribute('data-panel');
+                formTabs.forEach(t => t.classList.remove('active'));
+                formPanels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(`panel-${panelId}`).classList.add('active');
+                updateProgress(panelId);
+                if (panelId === 'preview') {
+                    updatePreview();
+                    updateEmbedCodes();
+                }
+            });
+        });
+
+        // ============================================
+        // PREVIEW TABS (Summary / Full / Embed)
+        // ============================================
+        const previewTabs = document.querySelectorAll('.preview-tab');
+        const previewPanels = document.querySelectorAll('.preview-panel');
+
+        previewTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const previewType = tab.getAttribute('data-preview');
+                previewTabs.forEach(t => t.classList.remove('active'));
+                previewPanels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(`preview-${previewType}`).classList.add('active');
+                
+                if (previewType === 'full') {
+                    refreshFullPreview();
+                } else if (previewType === 'embed') {
+                    updateEmbedCodes();
+                }
+            });
+        });
+
+        // Full page iframe preview
+        function refreshFullPreview() {
+            const iframe = document.getElementById('fullPreviewFrame');
+            if (!iframe) return;
+            
+            const data = getFormData();
+            const html = generateActionPage(data);
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            iframe.src = url;
+            
+            // Update URL display
+            const urlDisplay = document.querySelector('.preview-url');
+            if (urlDisplay) {
+                urlDisplay.textContent = `action-${data.id.toLowerCase()}.html`;
+            }
+        }
+
+        function openPreviewNewTab() {
+            const data = getFormData();
+            const html = generateActionPage(data);
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+        }
+
+        // Embed codes
+        function updateEmbedCodes() {
+            const data = getFormData();
+            const filename = `action-${data.id.toLowerCase()}.html`;
+            const baseUrl = 'https://votre-site.com/'; // Placeholder URL
+            
+            document.getElementById('embedLink').textContent = baseUrl + filename;
+            document.getElementById('embedIframe').textContent = `<iframe src="${filename}" width="100%" height="600" frameborder="0"></iframe>`;
+            document.getElementById('embedOg').textContent = `<meta property="og:title" content="${data.titre}">\n<meta property="og:description" content="${(data.description || '').substring(0, 150)}...">\n<meta property="og:type" content="article">`;
+            document.getElementById('embedMarkdown').textContent = `[${data.titre}](${baseUrl}${filename})`;
+        }
+
+        function copyEmbed(type) {
+            let text = '';
+            switch(type) {
+                case 'link':
+                    text = document.getElementById('embedLink').textContent;
+                    break;
+                case 'iframe':
+                    text = document.getElementById('embedIframe').textContent;
+                    break;
+                case 'og':
+                    text = document.getElementById('embedOg').textContent;
+                    break;
+                case 'markdown':
+                    text = document.getElementById('embedMarkdown').textContent;
+                    break;
+            }
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Code copié dans le presse-papier !');
+            });
+        }
+
+        // ============================================
+        // README
+        // ============================================
+        const readmeContent = `# 📖 La Réserve - Guide d'utilisation
+
+## Qu'est-ce que La Réserve ?
+
+La Réserve est un **système ARG (Alternate Reality Game)** qui permet de créer des actions de détournement institutionnel. Chaque action génère une page web autonome que vous pouvez publier n'importe où.
+
+## 🚀 Comment créer une action ?
+
+### 1. Remplir le formulaire
+
+L'éditeur propose **4 onglets** :
+
+| Onglet | Contenu |
+|--------|---------|
+| 📝 Infos de base | Titre, type, statut, description en Markdown |
+| 👥 Recrues | Personnes impliquées (réelles, fictives, vous-même) |
+| 📅 Timeline | Journal chronologique des événements |
+| 👁️ Aperçu | Prévisualisation de la page finale |
+
+### 2. Utiliser le Markdown
+
+La description supporte le **Markdown** :
+
+\`\`\`markdown
+# Titre principal
+## Sous-titre
+**Texte en gras** et *italique*
+- Liste à puces
+> Citation
+[Lien](https://example.com)
+\`\`\`
+
+**Raccourcis clavier :**
+- \`Ctrl+B\` : Gras
+- \`Ctrl+I\` : Italique  
+- \`Ctrl+S\` : Sauvegarder
+
+### 3. Exporter votre action
+
+Cliquez sur **"🚀 Générer ma page"** pour obtenir :
+- 📄 **Fichier HTML** autonome à publier
+- 📦 **Fichier JSON** pour backup/import
+- 📋 **Codes embed** pour intégration
+
+---
+
+## 📁 Inclure un README.md personnalisé
+
+Vous pouvez créer votre propre \`README.md\` à côté de vos fichiers d'action :
+
+### Structure recommandée
+
+\`\`\`
+mon-projet/
+├── README.md           ← Votre documentation
+├── action-lr-abc123.html
+├── action-lr-abc123.json
+└── assets/
+    └── images/
+\`\`\`
+
+### Contenu du README.md
+
+\`\`\`markdown
+# Mon Projet La Réserve
+
+## Actions créées
+- [Action 1](action-lr-abc123.html) - Description
+- [Action 2](action-lr-def456.html) - Description
+
+## Comment contribuer
+1. Téléchargez ce dépôt
+2. Ouvrez index.html
+3. Importez un JSON existant ou créez une nouvelle action
+
+## Licence
+CC BY-SA 4.0
+\`\`\`
+
+---
+
+## 🔧 Fonctionnalités avancées
+
+### Import/Export JSON
+
+Sauvegardez vos actions en JSON pour :
+- Les modifier plus tard
+- Les partager avec d'autres
+- Les versionner avec Git
+
+### Thèmes et typographies
+
+6 thèmes : Clair, Sombre, Disco, Néon, Retro, Console
+6 typographies : Élégant, Organique, Editorial, Littéraire, Poétique, Brut
+
+Le thème choisi est **intégré dans la page exportée**.
+
+### Pièces jointes
+
+Glissez-déposez des fichiers pour les associer à votre action.
+*(Note : les fichiers sont référencés, pas embarqués dans le HTML)*
+
+---
+
+## 🌐 Publication
+
+### Option 1 : GitHub Pages (gratuit)
+
+1. Créez un dépôt GitHub
+2. Uploadez vos fichiers HTML
+3. Activez GitHub Pages dans les paramètres
+4. Votre action est en ligne !
+
+### Option 2 : Hébergement statique
+
+Tout hébergeur de fichiers statiques fonctionne :
+- Netlify, Vercel, Surge.sh
+- Serveur personnel
+- IPFS pour le décentralisé
+
+### Option 3 : Partage direct
+
+Le fichier HTML fonctionne en local. Envoyez-le par email, clé USB, ou tout autre moyen.
+
+---
+
+## 🤝 Contribuer au projet
+
+La Réserve est un projet ouvert. Vous pouvez :
+- Créer vos propres actions
+- Proposer des améliorations
+- Partager vos détournements
+- Documenter vos expériences
+
+---
+
+*Ce document est généré automatiquement. La version la plus récente est intégrée dans l'interface.*
+`;
+
+        function toggleReadme() {
+            const btn = document.querySelector('.readme-toggle');
+            const content = document.getElementById('readmeContent');
+            const viewer = document.getElementById('readmeViewer');
+            
+            btn.classList.toggle('open');
+            content.classList.toggle('open');
+            
+            if (content.classList.contains('open') && !viewer.innerHTML) {
+                viewer.innerHTML = parseMarkdown(readmeContent);
+            }
+        }
+
+        // ============================================
+        // RECRUES MANAGER
+        // ============================================
+        const recruesList = document.getElementById('recruesList');
+        const addRecrueBtn = document.getElementById('addRecrue');
+        const recruesCountEl = document.getElementById('recruesCount');
+        let recrues = [];
+
+        const recrueTypeConfig = {
+            'reelle': { icon: '👤', label: 'Réelle', class: 'reelle' },
+            'fictive': { icon: '🎭', label: 'Fictive', class: 'fictive' },
+            'moi': { icon: '🪞', label: 'Moi-même', class: 'moi' },
+            'fonction': { icon: '💼', label: 'Fonction', class: 'fonction' }
+        };
+
+        function renderRecrues() {
+            recruesList.innerHTML = recrues.map((r, i) => {
+                const typeConf = recrueTypeConfig[r.type] || recrueTypeConfig['reelle'];
+                return `
+                <div class="recrue-item type-${typeConf.class}" data-index="${i}">
+                    <span class="recrue-type-indicator recrue-type-${typeConf.class}">
+                        <span class="type-icon">${typeConf.icon}</span>
+                        ${typeConf.label}
+                    </span>
+                    <input type="text" value="${r.nom}" placeholder="Nom / Pseudo" onchange="updateRecrue(${i}, 'nom', this.value)">
+                    <select onchange="updateRecrue(${i}, 'type', this.value); renderRecrues();">
+                        <option value="reelle" ${r.type === 'reelle' ? 'selected' : ''}>👤 Réelle</option>
+                        <option value="fictive" ${r.type === 'fictive' ? 'selected' : ''}>🎭 Fictive</option>
+                        <option value="moi" ${r.type === 'moi' ? 'selected' : ''}>🪞 Moi-même</option>
+                        <option value="fonction" ${r.type === 'fonction' ? 'selected' : ''}>💼 Fonction</option>
+                    </select>
+                    <input type="text" value="${r.role || ''}" placeholder="Rôle dans l'action" onchange="updateRecrue(${i}, 'role', this.value)">
+                    <button type="button" class="recrue-remove" onclick="removeRecrue(${i})">×</button>
+                </div>
+            `}).join('');
+            recruesCountEl.textContent = recrues.length;
+            addRecrueBtn.disabled = recrues.length >= 9;
+        }
+
+        window.updateRecrue = (index, field, value) => {
+            recrues[index][field] = value;
+        };
+
+        window.removeRecrue = (index) => {
+            recrues.splice(index, 1);
+            renderRecrues();
+        };
+
+        addRecrueBtn.addEventListener('click', () => {
+            if (recrues.length < 9) {
+                recrues.push({ nom: '', type: 'reelle', role: '' });
+                renderRecrues();
+            }
+        });
+
+        // ============================================
+        // TIMELINE MANAGER
+        // ============================================
+        const timelineList = document.getElementById('timelineList');
+        const addTimelineBtn = document.getElementById('addTimeline');
+        let timeline = [];
+
+        const timelineTypeConfig = {
+            'creation': { icon: '🚀', label: 'Création', class: 'creation' },
+            'soumission': { icon: '📨', label: 'Soumission', class: 'soumission' },
+            'reponse': { icon: '📬', label: 'Réponse', class: 'reponse' },
+            'silence': { icon: '🔇', label: 'Silence', class: 'silence' },
+            'validation': { icon: '✅', label: 'Validé', class: 'validation' },
+            'refus': { icon: '❌', label: 'Refus', class: 'refus' },
+            'bascule': { icon: '🌟', label: 'Basculé', class: 'bascule' },
+            'autre': { icon: '📝', label: 'Autre', class: 'autre' }
+        };
+
+        function renderTimeline() {
+            timelineList.innerHTML = timeline.map((t, i) => {
+                const typeConf = timelineTypeConfig[t.type] || timelineTypeConfig['autre'];
+                return `
+                <div class="timeline-item" data-index="${i}">
+                    <input type="date" value="${t.date}" onchange="updateTimeline(${i}, 'date', this.value)">
+                    <span class="timeline-type-indicator timeline-type-${typeConf.class}">
+                        ${typeConf.icon} ${typeConf.label}
+                    </span>
+                    <select onchange="updateTimeline(${i}, 'type', this.value); renderTimeline();">
+                        <option value="creation" ${t.type === 'creation' ? 'selected' : ''}>🚀 Création</option>
+                        <option value="soumission" ${t.type === 'soumission' ? 'selected' : ''}>📨 Soumission</option>
+                        <option value="reponse" ${t.type === 'reponse' ? 'selected' : ''}>📬 Réponse</option>
+                        <option value="silence" ${t.type === 'silence' ? 'selected' : ''}>🔇 Silence</option>
+                        <option value="validation" ${t.type === 'validation' ? 'selected' : ''}>✅ Validation</option>
+                        <option value="refus" ${t.type === 'refus' ? 'selected' : ''}>❌ Refus</option>
+                        <option value="bascule" ${t.type === 'bascule' ? 'selected' : ''}>🌟 Basculement</option>
+                        <option value="autre" ${t.type === 'autre' ? 'selected' : ''}>📝 Autre</option>
+                    </select>
+                    <input type="text" value="${t.description || ''}" placeholder="Description de l'événement" onchange="updateTimeline(${i}, 'description', this.value)">
+                    <button type="button" class="recrue-remove" onclick="removeTimeline(${i})">×</button>
+                </div>
+            `}).join('');
+        }
+
+        window.updateTimeline = (index, field, value) => {
+            timeline[index][field] = value;
+        };
+
+        window.removeTimeline = (index) => {
+            timeline.splice(index, 1);
+            renderTimeline();
+        };
+
+        addTimelineBtn.addEventListener('click', () => {
+            timeline.push({ date: new Date().toISOString().split('T')[0], type: 'creation', description: '' });
+            renderTimeline();
+        });
+
+        // Add initial creation entry
+        timeline.push({ date: new Date().toISOString().split('T')[0], type: 'creation', description: 'Création de l\'action' });
+        renderTimeline();
+
+        // ============================================
+        // PREVIEW
+        // ============================================
+        function getFormData() {
+            const description = document.getElementById('description').value || '';
+            return {
+                pseudo: document.getElementById('pseudo').value || 'Anonyme',
+                lieu: document.getElementById('lieu').value || '',
+                titre: document.getElementById('titre').value || 'Sans titre',
+                type: document.getElementById('type').value || '',
+                statut: document.getElementById('statut').value || 'en-cours',
+                description: description,
+                descriptionHtml: parseMarkdown(description),
+                asbl: document.getElementById('asbl').value || '',
+                lienSource: document.getElementById('lienSource').value || '',
+                lienAction: document.getElementById('lienAction').value || '',
+                recrues: recrues.filter(r => r.nom),
+                timeline: timeline.filter(t => t.date),
+                attachments: attachments,
+                theme: document.body.getAttribute('data-theme'),
+                style: document.body.getAttribute('data-style'),
+                createdAt: new Date().toISOString(),
+                id: generateId()
+            };
+        }
+
+        function generateId() {
+            return 'LR-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+
+        function updatePreview() {
+            const data = getFormData();
+            const preview = document.getElementById('previewContent');
+            
+            if (!data.titre || data.titre === 'Sans titre') {
+                preview.innerHTML = `<div class="preview-placeholder"><span>📄</span><p>Remplissez au moins le titre pour voir l'aperçu</p></div>`;
+                return;
+            }
+
+            const statutConfig = {
+                'en-cours': { label: 'En cours', emoji: '🟡', class: 'en-cours' },
+                'soumis': { label: 'Soumis', emoji: '🔵', class: 'soumis' },
+                'valide': { label: 'Validé', emoji: '🟢', class: 'valide' },
+                'refuse': { label: 'Refusé', emoji: '🔴', class: 'refuse' },
+                'bascule': { label: 'Basculé', emoji: '🌟', class: 'bascule' }
+            };
+
+            const recrueTypeIcons = {
+                'reelle': '👤',
+                'fictive': '🎭',
+                'moi': '🪞',
+                'fonction': '💼'
+            };
+
+            const statut = statutConfig[data.statut] || statutConfig['en-cours'];
+
+            preview.innerHTML = `
+                <div style="font-family: var(--font-body);">
+                    <p style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                        ${data.id} • ${new Date(data.createdAt).toLocaleDateString('fr-BE')}
+                    </p>
+                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary);">
+                        ${data.titre}
+                    </h2>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                        par <strong>${data.pseudo}</strong> ${data.lieu ? '• ' + data.lieu : ''}
+                    </p>
+                    <span class="status-badge status-${statut.class}">
+                        ${statut.emoji} ${statut.label}
+                    </span>
+                    <p style="color: var(--text-primary); margin: 1rem 0;">${data.description || '<em>Aucune description</em>'}</p>
+                    ${data.recrues.length > 0 ? `
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                            <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">
+                                ${data.recrues.length} recrue(s) :
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                ${data.recrues.map(r => `
+                                    <span class="recrue-type-indicator recrue-type-${r.type}" style="font-size: 0.65rem;">
+                                        <span class="type-icon">${recrueTypeIcons[r.type] || '👤'}</span>
+                                        ${r.nom || 'Sans nom'}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    ${data.timeline.length > 1 ? `
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                            <p style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">
+                                ${data.timeline.length} événement(s) dans le journal
+                            </p>
+                        </div>
+                    ` : ''}
+                    ${data.asbl ? `<p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">🏛️ ASBL: ${data.asbl}</p>` : ''}
+                </div>
+            `;
+        }
+
+        // Update preview on input
+        document.querySelectorAll('#declarationForm input, #declarationForm textarea, #declarationForm select').forEach(el => {
+            el.addEventListener('input', updatePreview);
+            el.addEventListener('change', updatePreview);
+        });
+
+        // ============================================
+        // GENERATE PAGE
+        // ============================================
+        const form = document.getElementById('declarationForm');
+        const modal = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        let generatedData = null;
+
+        modalClose.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('open');
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            generatedData = getFormData();
+            modal.classList.add('open');
+        });
+
+        // Download HTML
+        document.getElementById('downloadHtml').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!generatedData) return;
+            
+            const html = generateActionPage(generatedData);
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `action-${generatedData.id.toLowerCase()}.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Download JSON
+        document.getElementById('downloadJson').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!generatedData) return;
+            
+            const json = JSON.stringify(generatedData, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `action-${generatedData.id.toLowerCase()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Copy JSON
+        document.getElementById('copyLink').addEventListener('click', () => {
+            if (!generatedData) return;
+            navigator.clipboard.writeText(JSON.stringify(generatedData, null, 2));
+            alert('Données JSON copiées dans le presse-papier !');
+        });
+
+        // Share Twitter
+        document.getElementById('shareTwitter').addEventListener('click', () => {
+            if (!generatedData) return;
+            const text = `🎭 Nouvelle action dans La Réserve : "${generatedData.titre}" #LaReserve #ARG`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        });
+
+        // Share Mastodon
+        document.getElementById('shareMastodon').addEventListener('click', () => {
+            if (!generatedData) return;
+            const text = `🎭 Nouvelle action dans La Réserve : "${generatedData.titre}" #LaReserve #ARG`;
+            const instance = prompt('Entrez votre instance Mastodon (ex: mastodon.social):', 'mastodon.social');
+            if (instance) {
+                window.open(`https://${instance}/share?text=${encodeURIComponent(text)}`, '_blank');
+            }
+        });
+
+        // Save local
+        document.getElementById('saveLocal').addEventListener('click', () => {
+            const data = getFormData();
+            localStorage.setItem('lareserve-draft', JSON.stringify(data));
+            alert('Brouillon sauvegardé localement !');
+        });
+
+        // Load local draft
+        const draft = localStorage.getItem('lareserve-draft');
+        if (draft) {
+            try {
+                const data = JSON.parse(draft);
+                document.getElementById('pseudo').value = data.pseudo || '';
+                document.getElementById('lieu').value = data.lieu || '';
+                document.getElementById('titre').value = data.titre || '';
+                document.getElementById('type').value = data.type || '';
+                document.getElementById('statut').value = data.statut || 'en-cours';
+                document.getElementById('description').value = data.description || '';
+                document.getElementById('asbl').value = data.asbl || '';
+                document.getElementById('lienSource').value = data.lienSource || '';
+                document.getElementById('lienAction').value = data.lienAction || '';
+                if (data.recrues) { recrues = data.recrues; renderRecrues(); }
+                if (data.timeline) { timeline = data.timeline; renderTimeline(); }
+                if (data.attachments) { attachments = data.attachments; renderAttachments(); }
+                // Update markdown preview
+                updateMdPreview();
+            } catch (e) {}
+        }
+
+        // ============================================
+        // GENERATE ACTION PAGE HTML
+        // ============================================
+        function generateActionPage(data) {
+            const statutLabels = {
+                'en-cours': { label: 'En cours', emoji: '🟡', color: '#f59e0b' },
+                'soumis': { label: 'Soumis à une ASBL', emoji: '🔵', color: '#3b82f6' },
+                'valide': { label: 'Validé', emoji: '🟢', color: '#22c55e' },
+                'refuse': { label: 'Refusé', emoji: '🔴', color: '#ef4444' },
+                'bascule': { label: 'Basculé dans le réel', emoji: '🌟', color: '#8b5cf6' }
+            };
+
+            const typeLabels = {
+                'offre': 'Offre d\'emploi',
+                'site': 'Site d\'employeur',
+                'procedure': 'Procédure administrative',
+                'mail': 'Mail automatique',
+                'silence': 'Silence / Refus',
+                'autre': 'Autre'
+            };
+
+            const timelineTypeEmojis = {
+                'creation': '🚀',
+                'soumission': '📨',
+                'reponse': '📬',
+                'silence': '🔇',
+                'validation': '✅',
+                'refus': '❌',
+                'bascule': '🌟',
+                'autre': '📝'
+            };
+
+            const recrueTypeLabels = {
+                'reelle': 'Réelle',
+                'fictive': 'Fictive',
+                'moi': 'Moi-même',
+                'fonction': 'Fonction'
+            };
+
+            const statut = statutLabels[data.statut] || statutLabels['en-cours'];
+
+            return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${data.titre} — La Réserve</title>
+    <meta name="description" content="${data.description.substring(0, 160)}">
+    <meta property="og:title" content="${data.titre} — La Réserve">
+    <meta property="og:description" content="${data.description.substring(0, 160)}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fraunces:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=VT323&family=Press+Start+2P&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ${getThemeStyles(data.theme, data.style)}
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 3rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-soft);
+            border-radius: 30px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge-status {
+            background: ${statut.color}22;
+            color: ${statut.color};
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: var(--title-weight);
+            font-style: var(--title-style);
+            letter-spacing: var(--title-spacing);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .meta {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .meta strong {
+            color: var(--text-primary);
+        }
+        
+        .id-badge {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .timer {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-1-deep);
+            margin-top: 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: var(--title-weight);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-1-light);
+        }
+        
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        /* Markdown content styles */
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            font-family: var(--font-display);
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+        .markdown-content h1 { font-size: 1.5rem; }
+        .markdown-content h2 { font-size: 1.3rem; }
+        .markdown-content h3 { font-size: 1.1rem; }
+        .markdown-content p { margin: 0.75rem 0; }
+        .markdown-content strong { font-weight: 600; color: var(--accent-1-deep); }
+        .markdown-content em { font-style: italic; }
+        .markdown-content code {
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            background: var(--bg-secondary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+        }
+        .markdown-content pre {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .markdown-content pre code { background: none; padding: 0; }
+        .markdown-content blockquote {
+            border-left: 3px solid var(--accent-1);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        .markdown-content ul, .markdown-content ol {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+        .markdown-content li { margin: 0.4rem 0; }
+        .markdown-content a { color: var(--accent-1-deep); text-decoration: underline; }
+        .markdown-content hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 1.5rem 0;
+        }
+        .markdown-content img { max-width: 100%; border-radius: 8px; }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .info-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card p {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .info-card a {
+            color: var(--accent-1-deep);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .recrues-list {
+            display: grid;
+            gap: 0.8rem;
+        }
+        
+        .recrue-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .recrue-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-inverse);
+            font-weight: 600;
+        }
+        
+        .recrue-info {
+            flex: 1;
+        }
+        
+        .recrue-info strong {
+            display: block;
+            color: var(--text-primary);
+        }
+        
+        .recrue-info span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .recrue-type {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            background: var(--accent-2-pale);
+            color: var(--accent-2-deep);
+            border-radius: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -1.75rem;
+            top: 0.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-content {
+            color: var(--text-primary);
+        }
+        
+        .share-section {
+            background: var(--gradient-soft);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .share-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: var(--accent-1-pale);
+            border-color: var(--accent-1);
+        }
+        
+        .qr-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-logo .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+        }
+        
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--accent-1-deep);
+        }
+        
+        @media print {
+            .share-section, .qr-section { display: none; }
+        }
+    </style>
+</head>
+<body data-theme="${data.theme}" data-style="${data.style}">
+    <div class="container">
+        <header>
+            <span class="badge badge-status">${statut.emoji} ${statut.label}</span>
+            <h1>${escapeHtml(data.titre)}</h1>
+            <p class="meta">
+                par <strong>${escapeHtml(data.pseudo)}</strong>
+                ${data.lieu ? ` • ${escapeHtml(data.lieu)}` : ''}
+                ${data.type ? ` • ${typeLabels[data.type] || data.type}` : ''}
+            </p>
+            <span class="id-badge">${data.id}</span>
+            <p class="timer" id="timer"></p>
+        </header>
+        
+        <section>
+            <h2>Description</h2>
+            <div class="description markdown-content">${data.descriptionHtml || '<em>Aucune description fournie.</em>'}</div>
+        </section>
+        
+        ${(data.asbl || data.lienSource || data.lienAction) ? `
+        <section>
+            <h2>Informations</h2>
+            <div class="info-grid">
+                ${data.asbl ? `
+                <div class="info-card">
+                    <h3>ASBL visée</h3>
+                    <p>${escapeHtml(data.asbl)}</p>
+                </div>
+                ` : ''}
+                ${data.lienSource ? `
+                <div class="info-card">
+                    <h3>Source détournée</h3>
+                    <p><a href="${escapeHtml(data.lienSource)}" target="_blank">${escapeHtml(data.lienSource)}</a></p>
+                </div>
+                ` : ''}
+                ${data.lienAction ? `
+                <div class="info-card">
+                    <h3>Détournement</h3>
+                    <p><a href="${escapeHtml(data.lienAction)}" target="_blank">${escapeHtml(data.lienAction)}</a></p>
+                </div>
+                ` : ''}
+            </div>
+        </section>
+        ` : ''}
+        
+        ${data.recrues.length > 0 ? `
+        <section>
+            <h2>Recrues (${data.recrues.length}/9)</h2>
+            <div class="recrues-list">
+                ${data.recrues.map(r => `
+                <div class="recrue-card">
+                    <div class="recrue-avatar">${(r.nom || '?')[0].toUpperCase()}</div>
+                    <div class="recrue-info">
+                        <strong>${escapeHtml(r.nom)}</strong>
+                        ${r.role ? `<span>${escapeHtml(r.role)}</span>` : ''}
+                    </div>
+                    <span class="recrue-type">${recrueTypeLabels[r.type] || r.type}</span>
+                </div>
+                `).join('')}
+            </div>
+        </section>
+        ` : ''}
+        
+        ${data.timeline.length > 0 ? `
+        <section>
+            <h2>Journal de bord</h2>
+            <div class="timeline">
+                ${data.timeline.sort((a, b) => new Date(a.date) - new Date(b.date)).map(t => `
+                <div class="timeline-item">
+                    <span class="timeline-dot">${timelineTypeEmojis[t.type] || '📝'}</span>
+                    <p class="timeline-date">${new Date(t.date).toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+                    <p class="timeline-content">${escapeHtml(t.description) || '<em>Pas de description</em>'}</p>
+                </div>
+                `).join('')}
+            </div>
+        </section>
+        ` : ''}
+        
+        <section class="share-section">
+            <h3>Partager cette action</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(`🎭 "${data.titre}" — une action dans La Réserve #LaReserve #ARG`)}" target="_blank" class="share-btn">
+                    🐦 Twitter
+                </a>
+                <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Lien copié !');">
+                    📋 Copier le lien
+                </button>
+                <button class="share-btn" onclick="window.print();">
+                    🖨️ Imprimer
+                </button>
+            </div>
+        </section>
+        
+        <footer>
+            <a href="https://lareserve.be" class="footer-logo" target="_blank">
+                <span class="dot"></span>
+                LA RÉSERVE
+            </a>
+            <p>Ce qui existe déjà mais n'a jamais été reconnu.</p>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">
+                Action créée le ${new Date(data.createdAt).toLocaleDateString('fr-BE')} •
+                <a href="https://lareserve.be" target="_blank">Créer votre propre action</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Timer since creation
+        const createdAt = new Date('${data.createdAt}');
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - createdAt;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            let text = 'Cette action existe depuis ';
+            if (days > 0) text += days + ' jour' + (days > 1 ? 's' : '') + ', ';
+            if (hours > 0 || days > 0) text += hours + 'h ';
+            text += minutes + 'min';
+            
+            document.getElementById('timer').textContent = text;
+        }
+        updateTimer();
+        setInterval(updateTimer, 60000);
+    <\/script>
+</body>
+</html>`;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getThemeStyles(theme, style) {
+            // Return the CSS variables for the chosen theme and style
+            const themes = {
+                'clair': `
+                    --bg-primary: #fafaf8;
+                    --bg-secondary: #eef4ec;
+                    --bg-tertiary: #f3f0f7;
+                    --bg-card: #ffffff;
+                    --text-primary: #2d2d2d;
+                    --text-secondary: #6b6b6b;
+                    --text-inverse: #fafaf8;
+                    --accent-1: #a8c5a0;
+                    --accent-1-light: #d4e5d0;
+                    --accent-1-pale: #eef4ec;
+                    --accent-1-deep: #5a7d54;
+                    --accent-2: #b8a9c9;
+                    --accent-2-light: #ddd5e8;
+                    --accent-2-pale: #f3f0f7;
+                    --accent-2-deep: #7d6a91;
+                    --border-light: #e8e8e6;
+                    --gradient-primary: linear-gradient(135deg, #a8c5a0, #b8a9c9);
+                    --gradient-soft: linear-gradient(135deg, #eef4ec, #f3f0f7);
+                `,
+                'sombre': `
+                    --bg-primary: #1a1a1a;
+                    --bg-secondary: #242424;
+                    --bg-tertiary: #2a2a2a;
+                    --bg-card: #2d2d2d;
+                    --text-primary: #e8e8e8;
+                    --text-secondary: #999999;
+                    --text-inverse: #1a1a1a;
+                    --accent-1: #7fa878;
+                    --accent-1-light: #5a7d54;
+                    --accent-1-pale: #2d3d2a;
+                    --accent-1-deep: #a8c5a0;
+                    --accent-2: #9a8aab;
+                    --accent-2-light: #7d6a91;
+                    --accent-2-pale: #3d3545;
+                    --accent-2-deep: #b8a9c9;
+                    --border-light: #3d3d3d;
+                    --gradient-primary: linear-gradient(135deg, #7fa878, #9a8aab);
+                    --gradient-soft: linear-gradient(135deg, #2d3d2a, #3d3545);
+                `,
+                'disco': `
+                    --bg-primary: #1a0a2e;
+                    --bg-secondary: #2d1b4e;
+                    --bg-tertiary: #3d2a5e;
+                    --bg-card: #2d1b4e;
+                    --text-primary: #ffffff;
+                    --text-secondary: #d4a5ff;
+                    --text-inverse: #1a0a2e;
+                    --accent-1: #ff6ec7;
+                    --accent-1-light: #ff9ed8;
+                    --accent-1-pale: #4d1a3d;
+                    --accent-1-deep: #ff3eaa;
+                    --accent-2: #7b68ee;
+                    --accent-2-light: #9d8fff;
+                    --accent-2-pale: #2d1b5e;
+                    --accent-2-deep: #5a4cd0;
+                    --border-light: #5a3d7a;
+                    --gradient-primary: linear-gradient(135deg, #ff6ec7, #7b68ee, #00d4ff);
+                    --gradient-soft: linear-gradient(135deg, #4d1a3d, #2d1b5e);
+                `,
+                'neon': `
+                    --bg-primary: #0a0a0a;
+                    --bg-secondary: #111111;
+                    --bg-tertiary: #1a1a1a;
+                    --bg-card: #0f0f0f;
+                    --text-primary: #ffffff;
+                    --text-secondary: #888888;
+                    --text-inverse: #0a0a0a;
+                    --accent-1: #00ff88;
+                    --accent-1-light: #33ff9f;
+                    --accent-1-pale: #0a2a1a;
+                    --accent-1-deep: #00cc6a;
+                    --accent-2: #ff0080;
+                    --accent-2-light: #ff3399;
+                    --accent-2-pale: #2a0a1a;
+                    --accent-2-deep: #cc0066;
+                    --border-light: #2a2a2a;
+                    --gradient-primary: linear-gradient(135deg, #00ff88, #ff0080);
+                    --gradient-soft: linear-gradient(135deg, #0a2a1a, #2a0a1a);
+                `,
+                'retrogeek': `
+                    --bg-primary: #2b1b3d;
+                    --bg-secondary: #3d2a5a;
+                    --bg-tertiary: #4a3468;
+                    --bg-card: #352650;
+                    --text-primary: #ffd700;
+                    --text-secondary: #ff9500;
+                    --text-inverse: #2b1b3d;
+                    --accent-1: #00ff00;
+                    --accent-1-light: #66ff66;
+                    --accent-1-pale: #1a3d1a;
+                    --accent-1-deep: #00cc00;
+                    --accent-2: #ff6600;
+                    --accent-2-light: #ff8533;
+                    --accent-2-pale: #3d2a1a;
+                    --accent-2-deep: #cc5200;
+                    --border-light: #5a4a6d;
+                    --gradient-primary: linear-gradient(135deg, #00ff00, #ff6600);
+                    --gradient-soft: linear-gradient(135deg, #1a3d1a, #3d2a1a);
+                `,
+                'console': `
+                    --bg-primary: #0c0c0c;
+                    --bg-secondary: #1a1a1a;
+                    --bg-tertiary: #0f0f0f;
+                    --bg-card: #0c0c0c;
+                    --text-primary: #00ff00;
+                    --text-secondary: #00aa00;
+                    --text-inverse: #0c0c0c;
+                    --accent-1: #00ff00;
+                    --accent-1-light: #33ff33;
+                    --accent-1-pale: #0a1a0a;
+                    --accent-1-deep: #00cc00;
+                    --accent-2: #00ff00;
+                    --accent-2-light: #33ff33;
+                    --accent-2-pale: #0a1a0a;
+                    --accent-2-deep: #00cc00;
+                    --border-light: #00ff00;
+                    --gradient-primary: linear-gradient(135deg, #00ff00, #00aa00);
+                    --gradient-soft: linear-gradient(135deg, #0a1a0a, #0f1f0f);
+                `
+            };
+
+            const styles = {
+                'elegant': { body: 'Work Sans', display: 'Playfair Display', mono: 'Space Mono', weight: 600, style: 'normal', spacing: '-0.02em' },
+                'organique': { body: 'Manrope', display: 'Fraunces', mono: 'Space Mono', weight: 500, style: 'normal', spacing: '-0.01em' },
+                'editorial': { body: 'Inter', display: 'DM Serif Display', mono: 'Space Mono', weight: 400, style: 'normal', spacing: '0' },
+                'litteraire': { body: 'Archivo', display: 'Libre Baskerville', mono: 'Space Mono', weight: 700, style: 'normal', spacing: '-0.01em' },
+                'poetique': { body: 'Plus Jakarta Sans', display: 'Instrument Serif', mono: 'Space Mono', weight: 400, style: 'italic', spacing: '0.01em' },
+                'brut': { body: 'Crimson Pro', display: 'Bricolage Grotesque', mono: 'Space Mono', weight: 700, style: 'normal', spacing: '-0.03em' }
+            };
+
+            const selectedStyle = styles[style] || styles['elegant'];
+
+            // Special fonts for retrogeek and console - keep display/mono as theme-specific but use selected body font
+            if (theme === 'retrogeek') {
+                return `:root { ${themes[theme]} --font-display: 'Press Start 2P', cursive; --font-body: '${selectedStyle.body}', sans-serif; --font-mono: 'VT323', monospace; --title-weight: 400; --title-style: normal; --title-spacing: 0; }`;
+            }
+            if (theme === 'console') {
+                return `:root { ${themes[theme]} --font-display: 'Fira Code', monospace; --font-body: '${selectedStyle.body}', sans-serif; --font-mono: 'Fira Code', monospace; --title-weight: 400; --title-style: normal; --title-spacing: 0; }`;
+            }
+
+            return `:root { ${themes[theme] || themes['clair']} --font-display: '${selectedStyle.display}', serif; --font-body: '${selectedStyle.body}', sans-serif; --font-mono: '${selectedStyle.mono}', monospace; --title-weight: ${selectedStyle.weight}; --title-style: ${selectedStyle.style}; --title-spacing: ${selectedStyle.spacing}; }`;
+        }
+    </script>
+</body>
+</html>
